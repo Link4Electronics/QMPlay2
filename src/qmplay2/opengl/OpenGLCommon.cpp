@@ -54,6 +54,9 @@
 #ifndef GL_TEXTURE_RECTANGLE_ARB
     #define GL_TEXTURE_RECTANGLE_ARB 0x84F5
 #endif
+#ifndef GL_R8
+    #define GL_R8 GL_R8_EXT
+#endif
 #ifndef GL_R16
     #define GL_R16 GL_R16_EXT
 #endif
@@ -379,8 +382,8 @@ void OpenGLCommon::paintGL()
         };
         const int bytesMultiplier = (m_depth + 7) / 8;
         const GLenum dataType = (bytesMultiplier == 1) ? GL_UNSIGNED_BYTE : GL_UNSIGNED_SHORT;
-        const GLint internalFmt = (bytesMultiplier == 1) ? GL_LUMINANCE : GL_R16;
-        const GLenum fmt = (bytesMultiplier == 1) ? GL_LUMINANCE : GL_RED;
+        const GLint internalFmt = (bytesMultiplier == 1) ? GL_R8 : GL_R16;
+        const GLenum fmt = GL_RED;
 
         if (doReset)
         {
