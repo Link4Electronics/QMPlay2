@@ -243,6 +243,7 @@ void OpenGLCommon::setTextureParameters(GLenum target, quint32 texture, GLint pa
 void OpenGLCommon::initializeGL()
 {
     initializeOpenGLFunctions();
+    glGetIntegerv(GL_MAX_TEXTURE_SIZE, &m_maxTexSize);
 
 #if !defined(QT_OPENGL_ES_2) && !defined(QT_FEATURE_opengles2)
     if (hasPbo && !m_glInstance->hasMapBufferRange)
@@ -406,7 +407,8 @@ void OpenGLCommon::paintGL()
                 correctLinesize =
                 (
                     (halfLinesize == videoFrame.linesize(1) && videoFrame.linesize(1) == videoFrame.linesize(2)) &&
-                    (!m_sphericalView ? (videoFrame.linesize(1) == halfLinesize) : (videoFrame.linesize(0) == widths[0]))
+                    (!m_sphericalView ? (videoFrame.linesize(1) == halfLinesize) : (videoFrame.linesize(0) == widths[0])) &&
+                    videoFrame.linesize(0) / bytesMultiplier <= (GLsizei)m_maxTexSize
                 );
 
                 /* Prepare textures */
@@ -426,7 +428,7 @@ void OpenGLCommon::paintGL()
                 }
 
                 /* Prepare texture coordinates */
-                texCoordYCbCr[2] = texCoordYCbCr[6] = (videoFrame.linesize(0) / bytesMultiplier == widths[0]) ? 1.0f : (widths[0] / (videoFrame.linesize(0) / bytesMultiplier + 1.0f));
+                texCoordYCbCr[2] = texCoordYCbCr[6] = (correctLinesize && videoFrame.linesize(0) / bytesMultiplier != widths[0]) ? (widths[0] / (videoFrame.linesize(0) / bytesMultiplier + 1.0f)) : 1.0f;
             }
             resetDone = true;
             hasImage = false;

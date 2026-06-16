@@ -125,6 +125,7 @@ public:
     quint32 target;
 
     bool m_canUse16bitTexture = false;
+    GLint m_maxTexSize = 0;
 
     quint32 pbo[4];
     bool hasPbo;
