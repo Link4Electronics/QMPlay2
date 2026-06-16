@@ -458,7 +458,7 @@ void Functions::paintOSDtoYV12(quint8 *imageData, QImage &osdImg, int W, int H, 
         QPainter p(&osdImg);
         p.setRenderHint(QPainter::SmoothPixmapTransform);
         p.scale(iScaleW, iScaleH);
-        Functions::paintOSD(false, osd_list, scaleW, scaleH, p, &osd_ids);
+        Functions::paintOSD(true, osd_list, scaleW, scaleH, p, &osd_ids);
     }
 
     quint8 *data[3];
@@ -480,9 +480,9 @@ void Functions::paintOSDtoYV12(quint8 *imageData, QImage &osdImg, int W, int H, 
             if (A)
             {
                 const quint8 iA = ~A & 0xFF;
-                const quint8  B = (pixel >> 16) & 0xFF;
-                const quint8  G = (pixel >> 8) & 0xFF;
-                const quint8  R = pixel & 0xFF;
+                const quint8 R = (pixel >> 16) & 0xFF;
+                const quint8 G = (pixel >> 8) & 0xFF;
+                const quint8 B = pixel & 0xFF;
 
                 const quint8 Y = ((R * 66) >> 8) + (G >> 1) + ((B * 25) >> 8) + 16;
                 if (A == 0xFF)
@@ -559,11 +559,13 @@ void Functions::ImageEQ(int Contrast, int Brightness, quint8 *imageBits, unsigne
     auto clip8 = [](int val)->quint8 {
         return val > 255 ? (quint8)255 : (val < 0 ? (quint8)0 : val);
     };
-    for (unsigned i = 0; i < bitsCount; i += 4)
+    auto pixels = reinterpret_cast<QRgb *>(imageBits);
+    for (unsigned i = 0; i < bitsCount / 4; ++i)
     {
-        imageBits[i+0] = clip8((imageBits[i+0] - 127) * Contrast / 100 + 127 + Brightness);
-        imageBits[i+1] = clip8((imageBits[i+1] - 127) * Contrast / 100 + 127 + Brightness);
-        imageBits[i+2] = clip8((imageBits[i+2] - 127) * Contrast / 100 + 127 + Brightness);
+        const int r = clip8((qRed(pixels[i]) - 127) * Contrast / 100 + 127 + Brightness);
+        const int g = clip8((qGreen(pixels[i]) - 127) * Contrast / 100 + 127 + Brightness);
+        const int b = clip8((qBlue(pixels[i]) - 127) * Contrast / 100 + 127 + Brightness);
+        pixels[i] = qRgba(r, g, b, 255);
     }
 }
 int Functions::scaleEQValue(int val, int min, int max)

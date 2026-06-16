@@ -327,7 +327,7 @@ bool OpenMPDemux::open(const QString &urlArg)
             videoStreamInfo->params->codec_type = AVMEDIA_TYPE_VIDEO;
             videoStreamInfo->params->width = w;
             videoStreamInfo->params->height = h;
-            videoStreamInfo->params->format = AV_PIX_FMT_BGRA;
+            videoStreamInfo->params->format = AV_PIX_FMT_RGB32;
             videoStreamInfo->title = videoStreamTitle;
             streams_info += videoStreamInfo;
         }

@@ -125,7 +125,7 @@ Frame OpenMPTVisPatterns::render(openmpt::module *module)
     AVFrame *avFrame = av_frame_alloc();
     avFrame->width = m_width;
     avFrame->height = m_height;
-    avFrame->format = AV_PIX_FMT_BGRA;
+    avFrame->format = AV_PIX_FMT_RGB32;
 
     if (av_frame_get_buffer(avFrame, 0) != 0)
     {

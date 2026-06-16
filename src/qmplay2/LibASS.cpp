@@ -201,13 +201,20 @@ bool LibASS::addImgs(ass_image *img, QMPlay2OSD *osd)
         const quint8 b = img->color >>  8;
         const quint8 a = ~img->color & 0xFF;
 
-        auto data = reinterpret_cast<uint32_t *>(osdImg.rgba.data());
+        auto data = reinterpret_cast<quint8 *>(osdImg.rgba.data());
         for (int y = 0; y < img->h; y++)
         {
             const int offsetI = y * img->stride;
-            const int offsetB = y * img->w;
+            const int offsetB = y * img->w * 4;
             for (int x = 0; x < img->w; x++)
-                data[offsetB + x] = (a * img->bitmap[offsetI + x] / 0xFF) << 24 | b << 16 | g << 8 | r;
+            {
+                const int pi = offsetB + x * 4;
+                const quint8 coverage = a * img->bitmap[offsetI + x] / 0xFF;
+                data[pi + 0] = r;
+                data[pi + 1] = g;
+                data[pi + 2] = b;
+                data[pi + 3] = coverage;
+            }
         }
 
         img = img->next;

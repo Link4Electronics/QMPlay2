@@ -762,16 +762,22 @@ bool FFDecSW::getFromBitmapSubsBuffer(shared_ptr<QMPlay2OSD> &osd, double pos)
                     const auto source   = (uint8_t  *)avRect->data[0];
                     const auto palette  = (uint32_t *)avRect->data[1];
                     const auto linesize = avRect->linesize[0];
-                    auto dest = (uint32_t *)osdImg.rgba.data();
+                    auto dest = reinterpret_cast<quint8 *>(osdImg.rgba.data());
                     const int w = osdImg.size.width();
                     const int h = osdImg.size.height();
+                    const int stride = w * 4;
 
                     for (int y = 0; y < h; ++y)
                     {
+                        const int srcLine = y * linesize;
                         for (int x = 0; x < w; ++x)
                         {
-                            const uint32_t color = palette[source[y * linesize + x]];
-                            *(dest++) = (color & 0xFF00FF00) | ((color << 16) & 0x00FF0000) | ((color >> 16) & 0x000000FF);
+                            const quint32 color = palette[source[srcLine + x]];
+                            const int pi = y * stride + x * 4;
+                            dest[pi + 0] = (color >> 16) & 0xFF; // R
+                            dest[pi + 1] = (color >>  8) & 0xFF; // G
+                            dest[pi + 2] = (color      ) & 0xFF; // B
+                            dest[pi + 3] = (color >> 24) & 0xFF; // A
                         }
                     }
                 }

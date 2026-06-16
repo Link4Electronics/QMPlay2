@@ -145,8 +145,10 @@ vector<uint32_t> Instance::readShader(const QString &fileName)
 {
     const QResource res(":/vulkan/" + fileName + ".spv");
     const auto data = res.uncompressedData();
-    const auto u32Data = reinterpret_cast<const uint32_t *>(data.data());
-    return vector<uint32_t>(u32Data, u32Data + data.size() / sizeof(uint32_t));
+    vector<uint32_t> ret(data.size() / sizeof(uint32_t));
+    for (size_t i = 0; i < ret.size(); ++i)
+        ret[i] = (uint32_t)(uint8_t)data[i * 4] | ((uint32_t)(uint8_t)data[i * 4 + 1] << 8) | ((uint32_t)(uint8_t)data[i * 4 + 2] << 16) | ((uint32_t)(uint8_t)data[i * 4 + 3] << 24);
+    return ret;
 }
 
 vk::Format Instance::fromFFmpegPixelFormat(int avPixFmt)

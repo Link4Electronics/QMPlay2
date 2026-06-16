@@ -229,7 +229,7 @@ OggHelper::Chains OggHelper::getOggChains(bool &ok)
 
 inline quint32 OggHelper::getSerial(const quint8 *header) const
 {
-    return *(quint32 *)(header + 14);
+    return (quint32)header[14] | ((quint32)header[15] << 8) | ((quint32)header[16] << 16) | ((quint32)header[17] << 24);
 }
 inline bool OggHelper::getBeginOfStream(const quint8 *header) const
 {

@@ -628,8 +628,9 @@ void OpenGLCommon::paintGL()
             osdImg.fill(0);
             QPainter p(&osdImg);
             p.translate(-bounds.topLeft());
-            Functions::paintOSD(false, osdList, scaleW, scaleH, p, &osd_ids);
-            const quint8 *data = osdImg.constBits();
+            Functions::paintOSD(true, osdList, scaleW, scaleH, p, &osd_ids);
+            const QImage glImg = osdImg.convertToFormat(QImage::Format_RGBA8888);
+            const quint8 *data = glImg.constBits();
             if (hasPbo)
             {
                 const GLsizeiptr dataSize = (osdImg.width() * osdImg.height()) << 2;
