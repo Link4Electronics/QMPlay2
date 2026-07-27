@@ -8,6 +8,7 @@ uniform int uTrc;
 uniform mat3 uColorPrimariesMatrix;
 uniform float uMaxLuminance;
 uniform int uNegative;
+uniform float uGamma;
 
 #ifdef GL3
 vec4 getRGBAtOffset(float x, float y)
@@ -38,22 +39,31 @@ void main()
         // Subtract blur from original image, multiply and then add it to the original image
         RGB = clamp(RGB + (RGB - blur) * sharpness, 0.0, 1.0);
     }
-    if (uTrc == AVCOL_TRC_BT709)
+    if (uTrc == AVCOL_TRC_BT709 || uTrc == AVCOL_TRC_BT2020_10 || uTrc == AVCOL_TRC_BT2020_12)
     {
-        colorspace_trc_bt709(RGB.rgb, uColorPrimariesMatrix);
+        colorspace_trc_gamma24(RGB.rgb, uColorPrimariesMatrix);
     }
     else if (uTrc == AVCOL_TRC_SMPTE2084)
     {
         colorspace_trc_smpte2084(RGB.rgb, uColorPrimariesMatrix, uMaxLuminance);
     }
-    else if (uTrc == AVCOL_TRC_SMPTE2084)
+    else if (uTrc == AVCOL_TRC_ARIB_STD_B67)
     {
-        colorspace_trc_hlg(RGB.rgb, uColorPrimariesMatrix, uMaxLuminance);
+        colorspace_trc_hlg(RGB.rgb, uColorPrimariesMatrix);
     }
     if (uNegative != 0)
     {
         RGB = 1.0 - RGB;
     }
 #endif
-    gl_FragColor = clamp((RGB - 0.5) * contrast + 0.5, 0.0, 1.0) + brightness;
+    RGB = clamp((RGB - 0.5) * contrast + 0.5, 0.0, 1.0) + brightness;
+
+#ifdef GL3
+    if (uGamma != 1.0)
+    {
+        RGB = pow(clamp(RGB, 0.0, 1.0), vec4(vec3(1.0 / uGamma), 1.0));
+    }
+#endif
+
+    gl_FragColor = RGB;
 }

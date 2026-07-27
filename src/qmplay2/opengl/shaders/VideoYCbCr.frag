@@ -24,6 +24,7 @@ uniform int uTrc;
 uniform mat3 uColorPrimariesMatrix;
 uniform float uMaxLuminance;
 uniform int uNegative;
+uniform float uGamma;
 uniform sampler uY;
 #ifdef NV12
     uniform sampler uCbCr;
@@ -92,9 +93,9 @@ void main()
     vec3 rgb = clamp(uYUVtRGB * ((YCbCr * uRangeMultiplier.xyy - vec3(0.5, 0.0, 0.0)) * contrastSaturation + vec3(0.5, 0.0, 0.0)), 0.0, 1.0);
 
 #ifdef GL3
-    if (uTrc == AVCOL_TRC_BT709)
+    if (uTrc == AVCOL_TRC_BT709 || uTrc == AVCOL_TRC_BT2020_10 || uTrc == AVCOL_TRC_BT2020_12)
     {
-        colorspace_trc_bt709(rgb, uColorPrimariesMatrix);
+        colorspace_trc_gamma24(rgb, uColorPrimariesMatrix);
     }
     else if (uTrc == AVCOL_TRC_SMPTE2084)
     {
@@ -102,7 +103,7 @@ void main()
     }
     else if (uTrc == AVCOL_TRC_ARIB_STD_B67)
     {
-        colorspace_trc_hlg(rgb, uColorPrimariesMatrix, uMaxLuminance);
+        colorspace_trc_hlg(rgb, uColorPrimariesMatrix);
     }
     if (uNegative != 0)
     {
@@ -110,5 +111,14 @@ void main()
     }
 #endif
 
-    gl_FragColor = vec4(rgb + brightness, 1.0);
+    rgb += brightness;
+
+#ifdef GL3
+    if (uGamma != 1.0)
+    {
+        rgb = pow(clamp(rgb, 0.0, 1.0), vec3(1.0 / uGamma));
+    }
+#endif
+
+    gl_FragColor = vec4(rgb, 1.0);
 }

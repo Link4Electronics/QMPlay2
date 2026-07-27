@@ -171,21 +171,15 @@ if(USE_VULKAN)
         shaderscommon/hsl.glsl
     )
 
-    if(USE_GLSLC) # Shaders compilation
-        foreach(VULKAN_SHADER ${VULKAN_SHADERS})
-            qmvk_add_shader(${CMAKE_CURRENT_SOURCE_DIR}/${VULKAN_SHADER} ${VULKAN_SHADERS_INCLUDE})
-        endforeach()
+    foreach(VULKAN_SHADER ${VULKAN_SHADERS})
+        qmvk_add_shader(${CMAKE_CURRENT_SOURCE_DIR}/${VULKAN_SHADER} ${VULKAN_SHADERS_INCLUDE})
+    endforeach()
 
-        add_custom_target( # Needed to display GLSL files in QtCreator
-            VulkanShaders
-            SOURCES ${VULKAN_SHADERS} ${VULKAN_SHADERS_INCLUDE}
-            DEPENDS ${QMVK_SHADER_COMPILED_FILES}
-        )
-    else()
-        file(GLOB QMVK_SHADER_COMPILED_FILES
-            "${CMAKE_CURRENT_SOURCE_DIR}/vulkan/shaders/spv/*.spv"
-        )
-    endif()
+    add_custom_target( # Needed to display GLSL files in QtCreator
+        VulkanShaders
+        SOURCES ${VULKAN_SHADERS} ${VULKAN_SHADERS_INCLUDE}
+        DEPENDS ${QMVK_SHADER_COMPILED_FILES}
+    )
 
     # Compiled shaders QRC generation
 
@@ -212,12 +206,7 @@ if(USE_VULKAN)
         ${SHADER_QRC_CONTENT}
         " </qresource>\n</RCC>\n"
     )
-
-    add_custom_command(
-        OUTPUT ${VULKAN_SHADER_QRC_FILE}
-        DEPENDS ${QMVK_SHADER_COMPILED_FILES}
-        COMMAND ${CMAKE_COMMAND} -E copy ${VULKAN_SHADER_QRC_FILE_TMP} ${VULKAN_SHADER_QRC_FILE}
-    )
+    configure_file(${VULKAN_SHADER_QRC_FILE_TMP} ${VULKAN_SHADER_QRC_FILE} COPYONLY)
 
     # No need to add VulkanShaders target dependency to libqmplay2,
     # because generated QRC file is added into source file list.

@@ -90,10 +90,12 @@ struct VideoPipelineSpecializationData
     vk::Bool32 isGray;
     vk::Bool32 useBicubic;
     vk::Bool32 useBrightnessContrast;
+    vk::Bool32 useGamma;
     vk::Bool32 useHueSaturation;
     vk::Bool32 useSharpness;
     vk::Bool32 negative;
     int trc;
+    vk::Bool32 isBt2020Linear;
 };
 
 struct alignas(16) VertPushConstants
@@ -113,6 +115,7 @@ struct alignas(16) FragUniform
 
     float brightness;
     float contrast;
+    float gamma;
     float hue;
     float saturation;
     float sharpness;
@@ -134,6 +137,8 @@ static inline bool isTrcSupported(AVColorTransferCharacteristic trc)
     switch (trc)
     {
         case AVCOL_TRC_BT709:
+        case AVCOL_TRC_BT2020_10:
+        case AVCOL_TRC_BT2020_12:
         case AVCOL_TRC_SMPTE2084:
         case AVCOL_TRC_ARIB_STD_B67:
             return true;
@@ -230,7 +235,8 @@ void Window::setConfig(
     bool hqScaleDown,
     bool hqScaleUp,
     bool bypassCompositor,
-    bool hdr)
+    bool hdr,
+    bool bt2020)
 {
     if (nearestScaling)
     {
@@ -276,12 +282,13 @@ void Window::setConfig(
         }
     }
 #endif
-    if ((m_isWayland || m_platformName == QStringLiteral("windows")) && m_hdr != hdr)
+    if ((m_isWayland || m_platformName == QStringLiteral("windows")) && (m_hdr != hdr || m_bt2020 != bt2020))
     {
         m_hdr = hdr;
+        m_bt2020 = bt2020;
         m.checkSurfaceColorSpace = true;
-        m.hdrSettingsChanged = true;
         m.mustUpdateVideoPipelineSpecialization = true;
+        m.mustUpdateFragUniform = true;
         maybeRequestUpdate();
     }
 }
@@ -294,6 +301,7 @@ void Window::setParams(
     bool rotate90,
     float brightness,
     float contrast,
+    float gamma,
     float hue,
     float saturation,
     float sharpness,
@@ -321,12 +329,14 @@ void Window::setParams(
     if (
         !qFuzzyCompare(m_brightness, brightness) ||
         !qFuzzyCompare(m_contrast, contrast) ||
+        !qFuzzyCompare(m_gamma, gamma) ||
         !qFuzzyCompare(m_hue, hue) ||
         !qFuzzyCompare(m_saturation, saturation) ||
         !qFuzzyCompare(m_sharpness, sharpness)
     ) {
         m_brightness = brightness;
         m_contrast = contrast;
+        m_gamma = gamma;
         m_hue = hue;
         m_saturation = saturation;
         m_sharpness = sharpness;
@@ -335,6 +345,7 @@ void Window::setParams(
 
     auto specializationData = getVideoPipelineSpecializationData();
     specializationData->useBrightnessContrast = (!qFuzzyIsNull(brightness) || !qFuzzyCompare(contrast, 1.0f));
+    specializationData->useGamma = !qFuzzyCompare(gamma, 1.0f);
     specializationData->useHueSaturation = (!qFuzzyIsNull(hue) || !qFuzzyCompare(saturation, 1.0f));
     specializationData->useSharpness = !qFuzzyIsNull(sharpness);
     specializationData->negative = m_negative;
@@ -360,7 +371,7 @@ AVPixelFormats Window::supportedPixelFormats() const
 
 void Window::setFrame(const Frame &frame, QMPlay2OSDList &&osdList)
 {
-    m_osd = move(osdList);
+    m_osd = std::move(osdList);
     if (m.imageFromFrame)
         resetImages(false);
     m_frame = frame;
@@ -578,14 +589,21 @@ void Window::render()
 
     if (m.checkSurfaceColorSpace)
     {
-        const bool surfaceMatchesFrameProps = (isHdr10St2084() == m_frameProps->isHdr10St2084());
-        if (m.renderPass && ((m.hasHdr10St2084 && !surfaceMatchesFrameProps) || (m.hdrSettingsChanged && m_hdr != surfaceMatchesFrameProps)))
+        const bool contentHdr10 = m_frameProps->isHdr10St2084();
+        const bool contentBt2020 = (m_frameProps->colorPrimaries == AVCOL_PRI_BT2020);
+
+        auto desiredColorSpace = vk::ColorSpaceKHR::eSrgbNonlinear;
+        if (m_hdr && contentHdr10)
+            desiredColorSpace = vk::ColorSpaceKHR::eHdr10St2084EXT;
+        else if (m_bt2020 && contentBt2020)
+            desiredColorSpace = vk::ColorSpaceKHR::eBt2020LinearEXT;
+
+        if (m.renderPass && m.colorSpace != desiredColorSpace)
         {
             resetSwapChainAndGraphicsPipelines(true);
             m.renderPass.reset();
         }
         m.checkSurfaceColorSpace = false;
-        m.hdrSettingsChanged = false;
     }
 
     try
@@ -665,7 +683,7 @@ void Window::render()
                 maybeSetHdrMetadata();
                 m.swapChain->present(imageIdx, &suboptimal);
                 vulkanInstance()->presentQueued(this);
-            }, move(submitInfo));
+            }, std::move(submitInfo));
             m.queueLocker.unlock(); // It is not unlocked in case of exception
         }
     }
@@ -697,7 +715,7 @@ void Window::render()
 
 vector<unique_lock<mutex>> Window::prepareOSD(bool &changed)
 {
-    const auto osdIDs = move(m_osdIDs);
+    const auto osdIDs = std::move(m_osdIDs);
 
     if (m_osd.empty())
     {
@@ -938,16 +956,28 @@ bool Window::ensureSurfaceAndRenderPass()
     const auto prevColorSpace = m.colorSpace;
 
     auto surfaceFormat = vk::Format::eUndefined;
-    if (m_hdr)
+    if (m_hdr && m_frameProps->isHdr10St2084())
     {
         m.colorSpace = vk::ColorSpaceKHR::eHdr10St2084EXT;
         surfaceFormat = getSurfaceFormat();
     }
-    m.hasHdr10St2084 = (surfaceFormat != vk::Format::eUndefined);
-    if (!m.hasHdr10St2084 || !m_frameProps->isHdr10St2084())
+    if (surfaceFormat == vk::Format::eUndefined)
     {
-        m.colorSpace = vk::ColorSpaceKHR::eSrgbNonlinear;
-        surfaceFormat = getSurfaceFormat();
+        bool mustGetSrgbSurfaceFormat = true;
+        if (m_bt2020 && m_frameProps->colorPrimaries == AVCOL_PRI_BT2020)
+        {
+            m.colorSpace = vk::ColorSpaceKHR::eBt2020LinearEXT;
+            surfaceFormat = getSurfaceFormat();
+            if (surfaceFormat != vk::Format::eUndefined)
+            {
+                mustGetSrgbSurfaceFormat = false;
+            }
+        }
+        if (mustGetSrgbSurfaceFormat)
+        {
+            m.colorSpace = vk::ColorSpaceKHR::eSrgbNonlinear;
+            surfaceFormat = getSurfaceFormat();
+        }
     }
     if (surfaceFormat == vk::Format::eUndefined)
     {
@@ -1017,8 +1047,8 @@ void Window::ensureSwapChain()
     createInfo.renderPass = m.renderPass;
     createInfo.surface = m.surface;
     createInfo.fallbackSize = vk::Extent2D(winSize.width(), winSize.height());
-    createInfo.presentModes = move(presentModes);
-    createInfo.oldSwapChain = move(m.oldSwapChain);
+    createInfo.presentModes = std::move(presentModes);
+    createInfo.oldSwapChain = std::move(m.oldSwapChain);
     createInfo.colorSpace = m.colorSpace;
 #ifdef VK_USE_PLATFORM_WIN32_KHR
     createInfo.exclusiveFullScreen = m_widget->property("bypassCompositor").toBool()
@@ -1072,8 +1102,8 @@ void Window::ensureVideoPipeline()
         createInfo.renderPass = m.renderPass;
         createInfo.size = m.swapChain->size();
         createInfo.pushConstantsSize = sizeof(VertPushConstants);
-        createInfo.vertexBindingDescrs = move(vertexBindingDescrs);
-        createInfo.vertexAttrDescrs = move(vertexAttrDescrs);
+        createInfo.vertexBindingDescrs = std::move(vertexBindingDescrs);
+        createInfo.vertexAttrDescrs = std::move(vertexAttrDescrs);
         createInfo.colorBlendAttachment = &colorBlendAttachment;
         m.videoPipeline = GraphicsPipeline::create(createInfo);
     }
@@ -1146,7 +1176,7 @@ void Window::fillVerticesBuffer()
         );
         if (!m.verticesBuffer->isDeviceLocal())
         {
-            m.verticesStagingBuffer = move(m.verticesBuffer);
+            m.verticesStagingBuffer = std::move(m.verticesBuffer);
             m.verticesBuffer = Buffer::createVerticesWrite(
                 m.device,
                 m.verticesStagingBuffer->size(),
@@ -1262,7 +1292,7 @@ void Window::loadImage()
     {
         if (image->device() == m.device)
         {
-            m.image = move(image);
+            m.image = std::move(image);
             m.imageFromFrame = true;
         }
     }
@@ -1344,12 +1374,16 @@ void Window::obtainVideoPipelineSpecializationFrameProps()
     }
     specializationData->hasLuma = !m_frameProps->rgb;
     specializationData->isGray = m_frameProps->gray;
+    specializationData->isBt2020Linear = isBt2020Linear();
 
     if (
         !m_frameProps->gray &&
         !isHdr10St2084() &&
+        (!isBt2020Linear() || m_frameProps->colorTrc == AVCOL_TRC_SMPTE2084) &&
         isTrcSupported(m_frameProps->colorTrc) && (
-            m_frameProps->colorTrc != AVCOL_TRC_BT709 || (
+            (m_frameProps->colorTrc != AVCOL_TRC_BT709 &&
+             m_frameProps->colorTrc != AVCOL_TRC_BT2020_10 &&
+             m_frameProps->colorTrc != AVCOL_TRC_BT2020_12) || (
                 Functions::isColorPrimariesSupported(m_frameProps->colorPrimaries) &&
                 m_frameProps->colorPrimaries != AVCOL_PRI_BT709
             )
@@ -1384,9 +1418,9 @@ void Window::fillVideoPipelineFragmentUniform()
         fragData->levels.setY(128.0 / 255.0f);
     }
 
-    if (isTrcSupported(m_frameProps->colorTrc))
+    if (!isBt2020Linear() && isTrcSupported(m_frameProps->colorTrc))
     {
-        fragData->colorPrimariesMatrix = Functions::getColorPrimariesTo709Matrix(
+        fragData->colorPrimariesMatrix = Functions::getColorPrimariesToSpecifiedMatrix(
             m_frameProps->colorPrimaries
         ).toGenericMatrix<3, 4>();
     }
@@ -1416,6 +1450,7 @@ void Window::fillVideoPipelineFragmentUniform()
 
     fragData->brightness = m_brightness;
     fragData->contrast = m_contrast;
+    fragData->gamma = m_gamma;
     fragData->hue = m_hue;
     fragData->saturation = m_saturation;
     fragData->sharpness = m_sharpness;

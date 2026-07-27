@@ -12,10 +12,12 @@ layout(constant_id =  7) const bool hasLuma = false;
 layout(constant_id =  8) const bool isGray = false;
 layout(constant_id =  9) const bool useBicubic = false;
 layout(constant_id = 10) const bool useBrightnessContrast = false;
-layout(constant_id = 11) const bool useHueSaturation = false;
-layout(constant_id = 12) const bool useSharpness = false;
-layout(constant_id = 13) const bool negative = false;
-layout(constant_id = 14) const int trc = 0;
+layout(constant_id = 11) const bool useGamma = false;
+layout(constant_id = 12) const bool useHueSaturation = false;
+layout(constant_id = 13) const bool useSharpness = false;
+layout(constant_id = 14) const bool negative = false;
+layout(constant_id = 15) const int trc = 0;
+layout(constant_id = 16) const bool isBt2020Linear = false;
 
 layout(location = 0) in vec2 inTextureCoord;
 layout(location = 0) out vec4 outColor;
@@ -31,6 +33,7 @@ layout(binding = 0) uniform FragUniform
 
     float brightness;
     float contrast;
+    float gamma;
     float hue;
     float saturation;
     float sharpness;
@@ -207,17 +210,20 @@ void main()
         value = clamp(hsl2rgb(value), 0.0, 1.0);
     }
 
-    if (trc == AVCOL_TRC_BT709)
+    switch (trc)
     {
-        colorspace_trc_bt709(value, colorPrimariesMatrix);
-    }
-    else if (trc == AVCOL_TRC_SMPTE2084)
-    {
-        colorspace_trc_smpte2084(value, colorPrimariesMatrix, maxLuminance);
-    }
-    else if (trc == AVCOL_TRC_ARIB_STD_B67)
-    {
-        colorspace_trc_hlg(value, colorPrimariesMatrix, maxLuminance);
+        case AVCOL_TRC_BT709:
+        case AVCOL_TRC_BT2020_10:
+        case AVCOL_TRC_BT2020_12:
+            colorspace_trc_gamma24(value, colorPrimariesMatrix);
+            break;
+        case AVCOL_TRC_SMPTE2084:
+            // "colorPrimariesMatrix" is identity when "isBt2020Linear" is set
+            colorspace_trc_smpte2084(value, colorPrimariesMatrix, maxLuminance);
+            break;
+        case AVCOL_TRC_ARIB_STD_B67:
+            colorspace_trc_hlg(value, colorPrimariesMatrix);
+            break;
     }
 
     if (negative)
@@ -228,6 +234,16 @@ void main()
     if (useBrightnessContrast)
     {
         value = (value - 0.5) * contrast + 0.5 + brightness;
+    }
+
+    if (useGamma)
+    {
+        value = pow(clamp(value, 0.0, 1.0), vec3(1.0 / gamma));
+    }
+
+    if (isBt2020Linear)
+    {
+        value = pow(value, vec3(2.2));
     }
 
     outColor = vec4(value, 1.0);

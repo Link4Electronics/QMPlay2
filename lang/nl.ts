@@ -869,193 +869,6 @@
     </message>
 </context>
 <context>
-    <name>GeneralSettings</name>
-    <message>
-        <source>Show covers</source>
-        <translation>Hoezen tonen</translation>
-    </message>
-    <message>
-        <source>Show covers from directory if they aren&apos;t in the music file</source>
-        <translation>Hoezen tonen uit map indien niet ingesloten in muziekbestand</translation>
-    </message>
-    <message>
-        <source>Enlarge small covers</source>
-        <translation>Kleine hoezen vergroten</translation>
-    </message>
-    <message>
-        <source>Blurred covers as background</source>
-        <translation>Hoezen gebruiken als achtergrond (vervaagd)</translation>
-    </message>
-    <message>
-        <source>Set key bindings</source>
-        <translation>Sneltoetsen instellen</translation>
-    </message>
-    <message>
-        <source>Clear covers cache</source>
-        <translation>Hoezencache wissen</translation>
-    </message>
-    <message>
-        <source>Remove youtube-dl</source>
-        <translation>youtube-dl verwijderen</translation>
-    </message>
-    <message>
-        <source>Reset settings</source>
-        <translation>Standaardwaarden</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Taal</translation>
-    </message>
-    <message>
-        <source>Style</source>
-        <translation>Stijl</translation>
-    </message>
-    <message>
-        <source>Default audio language</source>
-        <translation>Standaard audiotaal</translation>
-    </message>
-    <message>
-        <source>Default subtitles language</source>
-        <translation>Standaard ondertiteltaal</translation>
-    </message>
-    <message>
-        <source>Screenshots path</source>
-        <translation>Schermfotolocatie</translation>
-    </message>
-    <message>
-        <source>Browse</source>
-        <translation>Bladeren</translation>
-    </message>
-    <message>
-        <source>Use system icon set</source>
-        <translation>Systeempictogrammen gebruiken</translation>
-    </message>
-    <message>
-        <source>Set appearance</source>
-        <translation>Vormgeving instellen</translation>
-    </message>
-    <message>
-        <source>Selected Profile</source>
-        <translation>Gekozen profiel</translation>
-    </message>
-    <message>
-        <source>Automatically check and download updates</source>
-        <translation>Automatisch controleren op en downloaden van updates</translation>
-    </message>
-    <message>
-        <source>Automatically open video window</source>
-        <translation>Automatisch het videoscherm openen</translation>
-    </message>
-    <message>
-        <source>Show tabs at the top of the main window</source>
-        <translation>Tabbladen tonen aan bovenkant van hoofdvenster</translation>
-    </message>
-    <message>
-        <source>Allow only one instance</source>
-        <translation>Slechts één proces toestaan</translation>
-    </message>
-    <message>
-        <source>Always only display file names in playlist</source>
-        <translation>Bestandsnamen alleen op afspeellijsten tonen</translation>
-    </message>
-    <message>
-        <source>Remember repeat mode</source>
-        <translation>Herhaalmodus onthouden</translation>
-    </message>
-    <message>
-        <source>Use proxy server</source>
-        <translation>Proxyserver gebruiken</translation>
-    </message>
-    <message>
-        <source>Proxy server needs login</source>
-        <translation>Inloggen op proxyserver vereist</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation>Gebruikersnaam</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Wachtwoord</translation>
-    </message>
-    <message>
-        <source>Proxy server address</source>
-        <translation>Proxyserveradres</translation>
-    </message>
-    <message>
-        <source>Proxy server port</source>
-        <translation>Proxyserverpoort</translation>
-    </message>
-    <message>
-        <source>Read and display still images</source>
-        <translation>Niet-bewegende afbeeldingen tonen</translation>
-    </message>
-    <message>
-        <source>Use tray notifications as default</source>
-        <translation>Systeemvakmeldingen tonen</translation>
-    </message>
-    <message>
-        <source>Automatically delete ungrouped entries</source>
-        <translation>Ongegroepeerde items automatisch verwijderen</translation>
-    </message>
-    <message>
-        <source>Hide artist metadata</source>
-        <translation>Metagegevens van artiesten verbergen</translation>
-    </message>
-    <message>
-        <source>Automatically restore main window when new video file is loaded</source>
-        <translation>Hoofdvenster herstellen bij openen van nieuwe video</translation>
-    </message>
-    <message>
-        <source>Don&apos;t load playlist files within other files</source>
-        <translation>Afspeellijstbestanden niet laden binnen andere bestanden</translation>
-    </message>
-    <message>
-        <source>Subtitles and tags encoding</source>
-        <translation>Ondertiteling- en tagencodering</translation>
-    </message>
-    <message>
-        <source>Output file path:</source>
-        <translation>Bestandslocatie:</translation>
-    </message>
-    <message>
-        <source>youtube-dl settings</source>
-        <translation>youtube-dl-instellingen</translation>
-    </message>
-    <message>
-        <source>Cookies from browser</source>
-        <translation>Browsercookies</translation>
-    </message>
-    <message>
-        <source>Custom path</source>
-        <translation>Zelfgekozen locatie</translation>
-    </message>
-    <message>
-        <source>Don&apos;t auto-update</source>
-        <translation>Niet automatisch bijwerken</translation>
-    </message>
-    <message>
-        <source>Please refer to yt-dlp documentation</source>
-        <translation>Bekijk de yt-dlp-documentatie</translation>
-    </message>
-    <message>
-        <source>Default quality</source>
-        <translation>Standaardkwaliteit</translation>
-    </message>
-    <message>
-        <source>&quot;-f&quot; parameter, please refer to yt-dlp documentation</source>
-        <translation>Optie ‘-f’ - bekijk de yt-dlp-documentatie</translation>
-    </message>
-    <message>
-        <source>Additional params</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Maintain panels size when resizing the main window (experimental)</source>
-        <translation>Paneelafmetingen niet aanpassen na verkleinen/vergroten van hoofdvenster (experimenteel)</translation>
-    </message>
-</context>
-<context>
     <name>Help</name>
     <message>
         <source>Open and play specified &lt;url&gt;.</source>
@@ -1230,21 +1043,6 @@
     <message>
         <source>Lyrics not found</source>
         <translation>Er is geen songtekst gevonden</translation>
-    </message>
-</context>
-<context>
-    <name>MPDemux</name>
-    <message>
-        <source>Samples</source>
-        <translation>Samples</translation>
-    </message>
-    <message>
-        <source>Patterns</source>
-        <translation>Patronen</translation>
-    </message>
-    <message>
-        <source>Channels</source>
-        <translation>Kanalen</translation>
     </message>
 </context>
 <context>
@@ -1742,14 +1540,6 @@
         <translation>Big endian</translation>
     </message>
     <message>
-        <source>Rayman2 music (*.apm)</source>
-        <translation>Rayman2-muziek (*.apm)</translation>
-    </message>
-    <message>
-        <source>Resampling method</source>
-        <translation>Resamplemethode</translation>
-    </message>
-    <message>
         <source>Additional notifications</source>
         <translation>Aanvullende meldingen</translation>
     </message>
@@ -1794,8 +1584,80 @@
         <translation>Xspf-ondersteuning</translation>
     </message>
     <message>
+        <source>OpenMPT enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All sequentially</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Default</source>
         <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>Nearest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cubic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windowed sinc (8 taps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Patterns</source>
+        <translation type="unfinished">Patronen</translation>
+    </message>
+    <message>
+        <source>Samples</source>
+        <translation type="unfinished">Samples</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subsongs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stereo separation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interpolation filter:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visualization:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Exclusive mode</source>
@@ -1947,21 +1809,6 @@
     </message>
 </context>
 <context>
-    <name>ModulesList</name>
-    <message>
-        <source>Move up</source>
-        <translation>Omhoog verplaatsen</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>…</translation>
-    </message>
-    <message>
-        <source>Move down</source>
-        <translation>Omlaag verplaatsen</translation>
-    </message>
-</context>
-<context>
     <name>NotifyService</name>
     <message>
         <source>Stopped</source>
@@ -1985,34 +1832,42 @@
     </message>
 </context>
 <context>
-    <name>OSDSettings</name>
+    <name>OSDSettingsW</name>
+    <message>
+        <source>Background</source>
+        <translation>Achtergrond</translation>
+    </message>
     <message>
         <source>Font</source>
         <translation>Lettertype</translation>
     </message>
     <message>
-        <source>Size</source>
-        <translation>Grootte</translation>
+        <source>Size: </source>
+        <translation>Grootte: </translation>
     </message>
     <message>
-        <source>Spacing</source>
-        <translation>Tussenruimte</translation>
+        <source>Spacing: </source>
+        <translation>Tussenruimte: </translation>
+    </message>
+    <message>
+        <source>Bold</source>
+        <translation>Vetgedrukt</translation>
     </message>
     <message>
         <source>Margins</source>
         <translation>Marges</translation>
     </message>
     <message>
-        <source>Left</source>
-        <translation>Links</translation>
+        <source>Left: </source>
+        <translation>Links: </translation>
     </message>
     <message>
-        <source>Right</source>
-        <translation>Rechts</translation>
+        <source>Right: </source>
+        <translation>Rechts: </translation>
     </message>
     <message>
-        <source>Vertical</source>
-        <translation>Verticaal</translation>
+        <source>Vertical: </source>
+        <translation>Verticaal: </translation>
     </message>
     <message>
         <source>Subtitles alignment</source>
@@ -2023,28 +1878,24 @@
         <translation>Rand</translation>
     </message>
     <message>
-        <source>Outline</source>
-        <translation>Contour</translation>
+        <source>Outline: </source>
+        <translation>Contour: </translation>
     </message>
     <message>
-        <source>Shadow</source>
-        <translation>Schaduw</translation>
+        <source>Shadow: </source>
+        <translation>Schaduw: </translation>
     </message>
     <message>
         <source>Colors</source>
         <translation>Kleuren</translation>
     </message>
     <message>
-        <source>Text</source>
-        <translation>Tekst</translation>
+        <source>Text: </source>
+        <translation>Tekst: </translation>
     </message>
     <message>
-        <source>Bold</source>
-        <translation>Vetgedrukt</translation>
-    </message>
-    <message>
-        <source>Background</source>
-        <translation>Achtergrond</translation>
+        <source>Border: </source>
+        <translation>Rand: </translation>
     </message>
 </context>
 <context>
@@ -2060,6 +1911,33 @@
     <message>
         <source>texture map error</source>
         <translation>Textuurtoewijzingsfout</translation>
+    </message>
+</context>
+<context>
+    <name>OpenMPDemux</name>
+    <message>
+        <source>Samples</source>
+        <translation type="unfinished">Samples</translation>
+    </message>
+    <message>
+        <source>Patterns</source>
+        <translation type="unfinished">Patronen</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished">Kanalen</translation>
+    </message>
+    <message>
+        <source>Instruments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <translation type="unfinished">Volgnummer</translation>
+    </message>
+    <message>
+        <source>Track %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2399,201 +2277,6 @@
     <message>
         <source>&amp;Keep audio pitch</source>
         <translation>Toonhoogte niet &amp;veranderen</translation>
-    </message>
-</context>
-<context>
-    <name>PlaybackSettings</name>
-    <message>
-        <source>Use available replay gain</source>
-        <translation>Beschikbare versterking gebruiken</translation>
-    </message>
-    <message>
-        <source>Album mode for replay gain</source>
-        <translation>Albummodus tijdens versterking</translation>
-    </message>
-    <message>
-        <source>Prevent clipping</source>
-        <translation>Krakend geluid voorkomen</translation>
-    </message>
-    <message>
-        <source>Amplify</source>
-        <translation>Versterken</translation>
-    </message>
-    <message>
-        <source>Partially checked means that there is a delay between click and pausing</source>
-        <translation>Deels aangekruist betekent dar er een vertraging is tussen aanklikken en pauzeren</translation>
-    </message>
-    <message>
-        <source>Primary mouse button on video dock toggles playback</source>
-        <translation>Primaire muisknop op videobalk voor afspelen/pauzeren</translation>
-    </message>
-    <message>
-        <source>Middle mouse button on video dock toggles fullscreen</source>
-        <translation>Middelste muisknop op videobalk om schermvullende weergave aan/uit te zetten</translation>
-    </message>
-    <message>
-        <source>Keep video delay</source>
-        <translation>Videovertraging onthouden</translation>
-    </message>
-    <message>
-        <source>Fade sound</source>
-        <translation>Geluid vervagen</translation>
-    </message>
-    <message>
-        <source>Keep speed</source>
-        <translation>Snelheid onthouden</translation>
-    </message>
-    <message>
-        <source>Keep zoom</source>
-        <translation>Zoomniveau onthouden</translation>
-    </message>
-    <message>
-        <source>Keep subtitles scale</source>
-        <translation>Ondertitelgrootte onthouden</translation>
-    </message>
-    <message>
-        <source>Keep subtitles delay</source>
-        <translation>Ondertitelvertraging onthouden</translation>
-    </message>
-    <message>
-        <source>Video to audio sync (frame skipping)</source>
-        <translation>Video-naar-audiosynchronisatie (frames overslaan)</translation>
-    </message>
-    <message>
-        <source>Short seeking (left and right arrows)</source>
-        <translation>Snel terug-/vooruitspoelen (pijltjestoetsen)</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation>sec.</translation>
-    </message>
-    <message>
-        <source>Long seeking (up and down arrows)</source>
-        <translation>Lang terug-/vooruitspoelen (pijltjestoetsen)</translation>
-    </message>
-    <message>
-        <source>Local buffer size (A/V packages count)</source>
-        <translation>Lokale bufferomvang (inclusief A/V-pakketten)</translation>
-    </message>
-    <message>
-        <source>Percent of packages for backwards rewinding</source>
-        <translation>Aantal procent terugspoelen</translation>
-    </message>
-    <message>
-        <source>Start playback internet stream if it is buffered</source>
-        <translation>Internetstream afspelen zodra gebufferd</translation>
-    </message>
-    <message>
-        <source>Maximum volume</source>
-        <translation>Maximaal volumeniveau</translation>
-    </message>
-    <message>
-        <source>Force samplerate</source>
-        <translation>Samplesnelheid afdwingen</translation>
-    </message>
-    <message>
-        <source>Force channels conversion</source>
-        <translation>Kanaalconversie afdwingen</translation>
-    </message>
-    <message>
-        <source>Use audio resampler and channel conversion before filters and visualizations</source>
-        <translation>Audio hersamplen en kanaalconversie alvorens filters en visualisaties toe te passen</translation>
-    </message>
-    <message>
-        <source>Keep aspect ratio</source>
-        <translation>Beeldverhouding onthouden</translation>
-    </message>
-    <message>
-        <source>Accurate seeking</source>
-        <translation>Nauwkeurig terug-/vooruitspoelen</translation>
-    </message>
-    <message>
-        <source>Play next entry after playback error</source>
-        <translation>Volgend item afspelen na afspeelfout</translation>
-    </message>
-    <message>
-        <source>Mouse wheel action on video dock</source>
-        <translation>Muiswielactie op videobalk</translation>
-    </message>
-    <message>
-        <source>Mouse wheel scrolls music/movie</source>
-        <translation>Muiswiel gebruiken om van audio/video te veranderen</translation>
-    </message>
-    <message>
-        <source>Mouse wheel changes the volume</source>
-        <translation>Muiswiel gebruiken om volume te veranderen</translation>
-    </message>
-    <message>
-        <source>Remember video equalizer settings</source>
-        <translation>Video-equalizerinstellingen onthouden</translation>
-    </message>
-    <message>
-        <source>Show buffered data indicator on slider</source>
-        <translation>Bufferindicator tonen op schuifbalk</translation>
-    </message>
-    <message>
-        <source>Store aspect ratio and zoom in config file</source>
-        <translation>Beeldverhouding en zoomniveau opslaan in configuratiebestand</translation>
-    </message>
-    <message>
-        <source>Unpause when seeking</source>
-        <translation>Afspelen tijdens doorspoelen</translation>
-    </message>
-    <message>
-        <source>Disable subtitles at program startup</source>
-        <translation>Ondertiteling uitschakelen na opstarten</translation>
-    </message>
-    <message>
-        <source>Remember audio/video/subtitles enabled state</source>
-        <translation>Audio-/Video-/Ondertitelstatus onthouden</translation>
-    </message>
-    <message>
-        <source>Amplify (no metadata)</source>
-        <translation>Versterken (geen metagegevens)</translation>
-    </message>
-    <message>
-        <source>Network buffer length</source>
-        <translation>Bufferduur</translation>
-    </message>
-    <message>
-        <source>Live stream buffer length</source>
-        <translation>Livestream-bufferduur</translation>
-    </message>
-    <message>
-        <source>Remember playback position for each playlist entry</source>
-        <translation>Afspeelpositie per item onthouden</translation>
-    </message>
-    <message>
-        <source>Desired video stream quality:</source>
-        <translation>Voorkeurskwaliteit van videostream:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Standaard</translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation>Sd</translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation>Hd</translation>
-    </message>
-    <message>
-        <source>Full HD</source>
-        <translation>Full hd</translation>
-    </message>
-    <message>
-        <source>4K</source>
-        <translation>4K</translation>
-    </message>
-    <message>
-        <source>Continue last playback when program starts</source>
-        <translation>Vorig bestand afspelen na opstarten</translation>
-    </message>
-    <message>
-        <source>The length must be at least 8 minutes. Your playback position must be in [1% - 99%] of the playback range. You can continue playback by pressing the icon next to the full screen button.</source>
-        <translation>De duur dient minimaal 8 minuten te zijn en de afspeelpositie dient tussen [1% – 99%] te liggen. U kunt het afspelen hervatten door op het pictogram naast de schermvullendemodusknop te klikken.</translation>
     </message>
 </context>
 <context>
@@ -3269,6 +2952,394 @@ Kruis half aan om dit niet toe te passen op de schuifbalk.</translation>
         <translation>Hardwareversnelde videofilters</translation>
     </message>
     <message>
+        <source>Show covers</source>
+        <translation>Hoezen tonen</translation>
+    </message>
+    <message>
+        <source>Show covers from directory if they aren&apos;t in the music file</source>
+        <translation>Hoezen tonen uit map indien niet ingesloten in muziekbestand</translation>
+    </message>
+    <message>
+        <source>Enlarge small covers</source>
+        <translation>Kleine hoezen vergroten</translation>
+    </message>
+    <message>
+        <source>Blurred covers as background</source>
+        <translation>Hoezen gebruiken als achtergrond (vervaagd)</translation>
+    </message>
+    <message>
+        <source>Clear covers cache</source>
+        <translation>Hoezencache wissen</translation>
+    </message>
+    <message>
+        <source>Set key bindings</source>
+        <translation>Sneltoetsen instellen</translation>
+    </message>
+    <message>
+        <source>Reset settings</source>
+        <translation>Standaardwaarden</translation>
+    </message>
+    <message>
+        <source>Language: </source>
+        <translation>Taal: </translation>
+    </message>
+    <message>
+        <source>Style: </source>
+        <translation>Stijl: </translation>
+    </message>
+    <message>
+        <source>Subtitles and tags encoding: </source>
+        <translation>Ondertiteling- en tagencodering: </translation>
+    </message>
+    <message>
+        <source>Default audio language: </source>
+        <translation>Standaard audiotaal: </translation>
+    </message>
+    <message>
+        <source>Default subtitles language: </source>
+        <translation>Standaard ondertiteltaal: </translation>
+    </message>
+    <message>
+        <source>Screenshots path: </source>
+        <translation>Schermfotolocatie: </translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bladeren</translation>
+    </message>
+    <message>
+        <source>Output file path: </source>
+        <translation>Bestandslocatie: </translation>
+    </message>
+    <message>
+        <source>Use system icon set</source>
+        <translation>Systeempictogrammen gebruiken</translation>
+    </message>
+    <message>
+        <source>Set appearance</source>
+        <translation>Vormgeving instellen</translation>
+    </message>
+    <message>
+        <source>Selected Profile: </source>
+        <translation>Gekozen profiel: </translation>
+    </message>
+    <message>
+        <source>Automatically check and download updates</source>
+        <translation>Automatisch controleren op en downloaden van updates</translation>
+    </message>
+    <message>
+        <source>Automatically open video window</source>
+        <translation>Automatisch het videoscherm openen</translation>
+    </message>
+    <message>
+        <source>Show tabs at the top of the main window</source>
+        <translation>Tabbladen tonen aan bovenkant van hoofdvenster</translation>
+    </message>
+    <message>
+        <source>Allow only one instance</source>
+        <translation>Slechts één proces toestaan</translation>
+    </message>
+    <message>
+        <source>Always only display file names in playlist</source>
+        <translation>Bestandsnamen alleen op afspeellijsten tonen</translation>
+    </message>
+    <message>
+        <source>Remember repeat mode</source>
+        <translation>Herhaalmodus onthouden</translation>
+    </message>
+    <message>
+        <source>Use proxy server</source>
+        <translation>Proxyserver gebruiken</translation>
+    </message>
+    <message>
+        <source>Proxy server needs login</source>
+        <translation>Inloggen op proxyserver vereist</translation>
+    </message>
+    <message>
+        <source>User name</source>
+        <translation>Gebruikersnaam</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Proxy server address</source>
+        <translation>Proxyserveradres</translation>
+    </message>
+    <message>
+        <source>Proxy server port</source>
+        <translation>Proxyserverpoort</translation>
+    </message>
+    <message>
+        <source>Read and display still images</source>
+        <translation>Niet-bewegende afbeeldingen tonen</translation>
+    </message>
+    <message>
+        <source>Use tray notifications as default</source>
+        <translation>Systeemvakmeldingen tonen</translation>
+    </message>
+    <message>
+        <source>Automatically delete ungrouped entries</source>
+        <translation>Ongegroepeerde items automatisch verwijderen</translation>
+    </message>
+    <message>
+        <source>Hide artist metadata</source>
+        <translation>Metagegevens van artiesten verbergen</translation>
+    </message>
+    <message>
+        <source>Automatically restore main window when new video file is loaded</source>
+        <translation>Hoofdvenster herstellen bij openen van nieuwe video</translation>
+    </message>
+    <message>
+        <source>Don&apos;t load playlist files within other files</source>
+        <translation>Afspeellijstbestanden niet laden binnen andere bestanden</translation>
+    </message>
+    <message>
+        <source>youtube-dl settings</source>
+        <translation>youtube-dl-instellingen</translation>
+    </message>
+    <message>
+        <source>Cookies from browser</source>
+        <translation>Browsercookies</translation>
+    </message>
+    <message>
+        <source>Custom path</source>
+        <translation>Zelfgekozen locatie</translation>
+    </message>
+    <message>
+        <source>Don&apos;t auto-update</source>
+        <translation>Niet automatisch bijwerken</translation>
+    </message>
+    <message>
+        <source>Remove youtube-dl</source>
+        <translation>youtube-dl verwijderen</translation>
+    </message>
+    <message>
+        <source>Please refer to yt-dlp documentation</source>
+        <translation>Bekijk de yt-dlp-documentatie</translation>
+    </message>
+    <message>
+        <source>Default quality</source>
+        <translation>Standaardkwaliteit</translation>
+    </message>
+    <message>
+        <source>&quot;-f&quot; parameter, please refer to yt-dlp documentation</source>
+        <translation>Optie ‘-f’ - bekijk de yt-dlp-documentatie</translation>
+    </message>
+    <message>
+        <source>Additional params</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Maintain panels size when resizing the main window (experimental)</source>
+        <translation>Paneelafmetingen niet aanpassen na verkleinen/vergroten van hoofdvenster (experimenteel)</translation>
+    </message>
+    <message>
+        <source>Fullscreen panels on the right side</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hide QMPlay2 logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Omhoog verplaatsen</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Omlaag verplaatsen</translation>
+    </message>
+    <message>
+        <source>Use available replay gain</source>
+        <translation>Beschikbare versterking gebruiken</translation>
+    </message>
+    <message>
+        <source>Album mode for replay gain</source>
+        <translation>Albummodus tijdens versterking</translation>
+    </message>
+    <message>
+        <source>Prevent clipping</source>
+        <translation>Krakend geluid voorkomen</translation>
+    </message>
+    <message>
+        <source>Amplify</source>
+        <translation>Versterken</translation>
+    </message>
+    <message>
+        <source>Amplify (no metadata)</source>
+        <translation>Versterken (geen metagegevens)</translation>
+    </message>
+    <message>
+        <source>Partially checked means that there is a delay between click and pausing</source>
+        <translation>Deels aangekruist betekent dar er een vertraging is tussen aanklikken en pauzeren</translation>
+    </message>
+    <message>
+        <source>Primary mouse button on video dock toggles playback</source>
+        <translation>Primaire muisknop op videobalk voor afspelen/pauzeren</translation>
+    </message>
+    <message>
+        <source>Middle mouse button on video dock toggles fullscreen</source>
+        <translation>Middelste muisknop op videobalk om schermvullende weergave aan/uit te zetten</translation>
+    </message>
+    <message>
+        <source>Keep video delay</source>
+        <translation>Videovertraging onthouden</translation>
+    </message>
+    <message>
+        <source>Fade sound</source>
+        <translation>Geluid vervagen</translation>
+    </message>
+    <message>
+        <source>Keep speed</source>
+        <translation>Snelheid onthouden</translation>
+    </message>
+    <message>
+        <source>Keep zoom</source>
+        <translation>Zoomniveau onthouden</translation>
+    </message>
+    <message>
+        <source>Keep subtitles scale</source>
+        <translation>Ondertitelgrootte onthouden</translation>
+    </message>
+    <message>
+        <source>Keep subtitles delay</source>
+        <translation>Ondertitelvertraging onthouden</translation>
+    </message>
+    <message>
+        <source>Video to audio sync (frame skipping)</source>
+        <translation>Video-naar-audiosynchronisatie (frames overslaan)</translation>
+    </message>
+    <message>
+        <source>Short seeking (left and right arrows): </source>
+        <translation>Snel terug-/vooruitspoelen (pijltjestoetsen): </translation>
+    </message>
+    <message>
+        <source>sec</source>
+        <translation>sec.</translation>
+    </message>
+    <message>
+        <source>Long seeking (up and down arrows): </source>
+        <translation>Lang terug-/vooruitspoelen (pijltjestoetsen): </translation>
+    </message>
+    <message>
+        <source>Local buffer size (A/V packages count): </source>
+        <translation>Lokale bufferomvang (inclusief A/V-pakketten): </translation>
+    </message>
+    <message>
+        <source>Network buffer length: </source>
+        <translation>Bufferduur: </translation>
+    </message>
+    <message>
+        <source>Percent of packages for backwards rewinding: </source>
+        <translation>Aantal procent terugspoelen: </translation>
+    </message>
+    <message>
+        <source>Live stream buffer length: </source>
+        <translation>Livestream-bufferduur: </translation>
+    </message>
+    <message>
+        <source>Start playback internet stream if it is buffered: </source>
+        <translation>Internetstream afspelen zodra gebufferd: </translation>
+    </message>
+    <message>
+        <source>Desired video stream quality: </source>
+        <translation>Voorkeurskwaliteit van videostream: </translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation>Sd</translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation>Hd</translation>
+    </message>
+    <message>
+        <source>Full HD</source>
+        <translation>Full hd</translation>
+    </message>
+    <message>
+        <source>4K</source>
+        <translation>4K</translation>
+    </message>
+    <message>
+        <source>Maximum volume: </source>
+        <translation>Maximaal volumeniveau: </translation>
+    </message>
+    <message>
+        <source>Force samplerate: </source>
+        <translation>Samplesnelheid afdwingen: </translation>
+    </message>
+    <message>
+        <source>Force channels conversion: </source>
+        <translation>Kanaalconversie afdwingen: </translation>
+    </message>
+    <message>
+        <source>Use audio resampler and channel conversion before filters and visualizations</source>
+        <translation>Audio hersamplen en kanaalconversie alvorens filters en visualisaties toe te passen</translation>
+    </message>
+    <message>
+        <source>Keep aspect ratio</source>
+        <translation>Beeldverhouding onthouden</translation>
+    </message>
+    <message>
+        <source>Accurate seeking</source>
+        <translation>Nauwkeurig terug-/vooruitspoelen</translation>
+    </message>
+    <message>
+        <source>Play next entry after playback error</source>
+        <translation>Volgend item afspelen na afspeelfout</translation>
+    </message>
+    <message>
+        <source>Continue last playback when program starts</source>
+        <translation>Vorig bestand afspelen na opstarten</translation>
+    </message>
+    <message>
+        <source>Mouse wheel action on video dock</source>
+        <translation>Muiswielactie op videobalk</translation>
+    </message>
+    <message>
+        <source>Mouse wheel scrolls music/movie</source>
+        <translation>Muiswiel gebruiken om van audio/video te veranderen</translation>
+    </message>
+    <message>
+        <source>Mouse wheel changes the volume</source>
+        <translation>Muiswiel gebruiken om volume te veranderen</translation>
+    </message>
+    <message>
+        <source>Remember video equalizer settings</source>
+        <translation>Video-equalizerinstellingen onthouden</translation>
+    </message>
+    <message>
+        <source>Show buffered data indicator on slider</source>
+        <translation>Bufferindicator tonen op schuifbalk</translation>
+    </message>
+    <message>
+        <source>Store aspect ratio and zoom in config file</source>
+        <translation>Beeldverhouding en zoomniveau opslaan in configuratiebestand</translation>
+    </message>
+    <message>
+        <source>Unpause when seeking</source>
+        <translation>Afspelen tijdens doorspoelen</translation>
+    </message>
+    <message>
+        <source>Disable subtitles at program startup</source>
+        <translation>Ondertiteling uitschakelen na opstarten</translation>
+    </message>
+    <message>
+        <source>Remember audio/video/subtitles enabled state</source>
+        <translation>Audio-/Video-/Ondertitelstatus onthouden</translation>
+    </message>
+    <message>
+        <source>Remember playback position for each playlist entry</source>
+        <translation>Afspeelpositie per item onthouden</translation>
+    </message>
+    <message>
+        <source>The length must be at least 8 minutes. Your playback position must be in [1% - 99%] of the playback range. You can continue playback by pressing the icon next to the full screen button.</source>
+        <translation>De duur dient minimaal 8 minuten te zijn en de afspeelpositie dient tussen [1% – 99%] te liggen. U kunt het afspelen hervatten door op het pictogram naast de schermvullendemodusknop te klikken.</translation>
+    </message>
+    <message>
         <source>Legacy</source>
         <translation>Verouderd</translation>
     </message>
@@ -3347,6 +3418,10 @@ Kruis half aan om dit niet toe te passen op de schuifbalk.</translation>
     <message>
         <source>High quality image scaling up</source>
         <translation>Afbeeldingen vergroten met hoge kwaliteit</translation>
+    </message>
+    <message>
+        <source>Try to display BT.2020 videos in BT.2020 color space (experimental)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>First available device</source>
@@ -3727,6 +3802,10 @@ Deels aankruisen = minder kanalen dan de opgegeven waarde
         <translation>Contrast</translation>
     </message>
     <message>
+        <source>Gamma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Saturation</source>
         <translation>Verzadiging</translation>
     </message>
@@ -3737,6 +3816,10 @@ Deels aankruisen = minder kanalen dan de opgegeven waarde
     <message>
         <source>Sharpness</source>
         <translation>Scherpte</translation>
+    </message>
+    <message>
+        <source>Gamma correction: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Reset</source>
@@ -3789,6 +3872,14 @@ Deels aankruisen = minder kanalen dan de opgegeven waarde
     <message>
         <source>Negative</source>
         <translation>Negatief</translation>
+    </message>
+    <message>
+        <source>Gamma down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gamma up</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable negative</source>

@@ -27,14 +27,10 @@ Table of Contents
 
 - [Download](https://github.com/zaps166/QMPlay2/releases/latest) the Windows installer.
 
-#### Easy installation on Linux (AppImage)
-
-- [Download](https://github.com/zaps166/QMPlay2/releases/latest) the Linux AppImage.
-
-#### Easy installation on Arch Linux / Manjaro Linux
+#### Easy installation on Arch Linux
 
 - Install AUR client (e.g. yay),
-- run the following command: `yay -S qmplay2`
+- run the following command: `yay -S qmplay2-git`
 
 #### Easy installation on openSUSE
 - Don't mix FFmpeg from different repositories!
@@ -223,6 +219,7 @@ For CMake build be sure that you have CMake 3.16 or higher.
     - libswresample,
     - libavfilter (FFmpeg >= 5.1) - for FFmpeg audio filters,
     - libavdevice - for FFmpeg module only, optional (enabled on Linux as default),
+- glslc
 
 #### Important:
 - TagLib >= 1.11,
@@ -233,6 +230,7 @@ For CMake build be sure that you have CMake 3.16 or higher.
 - Chiptune: libgme and libsidplayfp,
 - AudioCD: libcdio and libcddb,
 - ALSA (Linux only): libasound,
+- OpenMPT: libopenmpt,
 - PipeWire - libpipewire,
 - PulseAudio - libpulse-simple,
 - PortAudio: portaudio (v19),
@@ -275,7 +273,6 @@ CMake options (option - default value: description):
     - `USE_VIDEOFILTERS` - ON: enable/disable VideoFilters module.
     - `USE_OPENGL` - `ON`: enable/disable OpenGL support.
     - `USE_VULKAN` - autodetect: enable/disable Vulkan support.
-    - `USE_GLSLC` - `OFF`: enable/disable GLSL -> SPIR-V shader compilation when building QMPlay2.
     - `USE_AUDIOCD` - autodetect: enabled if libcdio and libcddb exist: enable/disable AudioCD module.
     - `USE_ALSA` - `ON` on Linux: enable/disable ALSA module.
     - `USE_PORTAUDIO` - `ON` on non-Linux OS: enable/disable PortAudio module.
@@ -298,7 +295,7 @@ CMake options (option - default value: description):
     - `USE_GIT_VERSION` - `ON`: append Git HEAD to QMPlay2 version (if exists).
     - `USE_UPDATES` - `ON`: enable/disable software updates.
     - `FIND_HWACCEL_DRIVERS_PATH` - `OFF`: Find drivers path for hwaccel, useful for universal package.
-    - `BUILD_WITH_QT6` - autodetect: Build with Qt6.
+    - `BUILD_WITH_QT6` - ON: Build with Qt6.
 
 Using other Qt installation of CMake:
 - `Qt6Widgets_DIR`: path to the Qt6Widgets cmake directory (e.g. `~/qtbase/lib/cmake/Qt6Widgets`).
@@ -372,7 +369,7 @@ sudo ninja -C build uninstall
 
 ## Building package RPM, DEB or any other
 
-You can look at [Arch Linux PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=qmplay2).
+You can look at [Arch Linux PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=qmplay2-git).
 
 ## Other information
 

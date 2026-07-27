@@ -38,11 +38,15 @@ public:
 private slots:
     void visibilityChanged(bool v);
 
-    void updatePlaying(bool play, const QString &title, const QString &artist, const QString &album, int length, bool needCover, const QString &fileName, const QString &lyrics);
+private:
+    void updatePlaying(bool play, const QString &title, const QString &artist, const QString &album, int length, bool needCover, const QString &fileName, const QString &url, const QString &lyrics);
 
+private slots:
     void finished(NetworkReply *reply);
 
 private:
+    bool loadLrcFile(const QString &url);
+
     void search();
 
     void lyricsNotFound();

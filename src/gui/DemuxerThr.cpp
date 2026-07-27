@@ -466,7 +466,7 @@ void DemuxerThr::run()
     time = localStream ? 0.0 : Functions::gettime();
 
     const int minBuffered = demuxer->dontUseBuffer()
-        ? 1
+        ? 2
         : localStream
           ? qMax(10, minBuffSizeLocal)
           : 0 // Use "forwardTime"
@@ -758,7 +758,7 @@ void DemuxerThr::run()
 
     emit allowRecording(false);
 
-    emit QMPlay2Core.updatePlaying(false, title, artist, album, round(demuxer->length()), false, updatePlayingName);
+    emit QMPlay2Core.updatePlaying(false, title, artist, album, round(demuxer->length()), false, updatePlayingName, url);
 
     playC.endOfStream = playC.canUpdatePos = false; //to musi tu być!
     end();
@@ -915,7 +915,7 @@ void DemuxerThr::updateCoverAndPlaying(bool doCompare)
         if (showCovers)
             loadImage();
         emitInfo();
-        emit QMPlay2Core.updatePlaying(true, title, artist, album, round(demuxer->length()), showCovers && !hasCover, updatePlayingName, lyrics);
+        emit QMPlay2Core.updatePlaying(true, title, artist, album, round(demuxer->length()), showCovers && !hasCover, updatePlayingName, url, lyrics);
     }
 }
 

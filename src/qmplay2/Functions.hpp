@@ -126,6 +126,7 @@ namespace Functions
 
     QMPLAY2SHAREDLIB_EXPORT void ImageEQ(int Contrast, int Brightness, quint8 *imageBits, unsigned bitsCount);
     QMPLAY2SHAREDLIB_EXPORT int scaleEQValue(int val, int min, int max);
+    QMPLAY2SHAREDLIB_EXPORT float sliderValueToGamma(int sliderValue);
 
     QMPLAY2SHAREDLIB_EXPORT QByteArray convertToASS(QString txt);
 
@@ -157,8 +158,8 @@ namespace Functions
     QMPLAY2SHAREDLIB_EXPORT bool isColorPrimariesSupported(AVColorPrimaries colorPrimaries);
     QMPLAY2SHAREDLIB_EXPORT bool fillColorPrimariesData(AVColorPrimaries colorPrimaries, QVector2D &wp, std::array<QVector2D, 3> &primaries);
 
-    QMPLAY2SHAREDLIB_EXPORT QMatrix4x4 getColorPrimariesTo709Matrix(const QVector2D &wp, std::array<QVector2D, 3> &primaries);
-    QMPLAY2SHAREDLIB_EXPORT QMatrix4x4 getColorPrimariesTo709Matrix(AVColorPrimaries colorPrimaries);
+    QMPLAY2SHAREDLIB_EXPORT QMatrix4x4 getColorPrimariesToSpecifiedMatrix(const QVector2D &wp, std::array<QVector2D, 3> &primaries, AVColorPrimaries dstColorPrimaries = AVCOL_PRI_BT709);
+    QMPLAY2SHAREDLIB_EXPORT QMatrix4x4 getColorPrimariesToSpecifiedMatrix(AVColorPrimaries colorPrimaries, AVColorPrimaries dstColorPrimaries = AVCOL_PRI_BT709);
 
     QMPLAY2SHAREDLIB_EXPORT bool compareText(const QString &a, const QString &b);
 

@@ -69,7 +69,8 @@ public:
         bool hqScaleDown,
         bool hqScaleUp,
         bool bypassCompositor,
-        bool hdr
+        bool hdr,
+        bool bt2020
     );
     void setParams(
         const QSize &size,
@@ -80,6 +81,7 @@ public:
         bool rotate90,
         float brightness,
         float contrast,
+        float gamma,
         float hue,
         float saturation,
         float sharpness,
@@ -95,6 +97,7 @@ public:
     void setFrame(const Frame &frame, QMPlay2OSDList &&osdList);
 
     inline bool isHdr10St2084() const;
+    inline bool isBt2020Linear() const;
 
 private:
     inline VideoPipelineSpecializationData *getVideoPipelineSpecializationData();
@@ -190,8 +193,6 @@ private:
 
         bool supportsHdrMetadata = false;
 
-        bool hasHdr10St2084 = false;
-
         unique_lock<mutex> queueLocker;
 
         shared_ptr<ShaderModule> vertexShaderModule;
@@ -208,7 +209,6 @@ private:
         vk::UniqueSwapchainKHR oldSwapChain;
 
         bool checkSurfaceColorSpace = false;
-        bool hdrSettingsChanged = false;
         bool mustUpdateHdrMetadata = false;
         bool mustUpdateVideoPipelineSpecialization = false;
 
@@ -247,6 +247,7 @@ private:
     bool m_hqScaleDown = false;
     bool m_hqScaleUp = false;
     bool m_hdr = false;
+    bool m_bt2020 = false;
 
     QSize m_imgSize;
     int m_flip = 0;
@@ -254,6 +255,7 @@ private:
 
     float m_brightness = 0.0f;
     float m_contrast = 1.0f;
+    float m_gamma = 1.0f;
     float m_hue = 0.0f;
     float m_saturation = 1.0f;
     float m_sharpness = 0.0f;
@@ -277,6 +279,10 @@ bool Window::hasError() const
 bool Window::isHdr10St2084() const
 {
     return (m.colorSpace == vk::ColorSpaceKHR::eHdr10St2084EXT);
+}
+bool Window::isBt2020Linear() const
+{
+    return (m.colorSpace == vk::ColorSpaceKHR::eBt2020LinearEXT);
 }
 
 }

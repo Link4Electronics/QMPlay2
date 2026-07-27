@@ -869,193 +869,6 @@
     </message>
 </context>
 <context>
-    <name>GeneralSettings</name>
-    <message>
-        <source>Browse</source>
-        <translation>Przeglądaj</translation>
-    </message>
-    <message>
-        <source>Use system icon set</source>
-        <translation>Użyj systemowego zestawu ikon</translation>
-    </message>
-    <message>
-        <source>Set appearance</source>
-        <translation>Ustaw wygląd</translation>
-    </message>
-    <message>
-        <source>Show covers</source>
-        <translation>Wyświetlaj okładki</translation>
-    </message>
-    <message>
-        <source>Blurred covers as background</source>
-        <translation>Rozmyte okładki jako tło</translation>
-    </message>
-    <message>
-        <source>Show covers from directory if they aren&apos;t in the music file</source>
-        <translation>Wyświetlaj okładki z katalogu jeżeli nie ma ich w pliku muzycznym</translation>
-    </message>
-    <message>
-        <source>Automatically open video window</source>
-        <translation>Automatyczne otwieranie okienka z filmem</translation>
-    </message>
-    <message>
-        <source>Automatically check and download updates</source>
-        <translation>Automatycznie sprawdzaj i pobieraj aktualizacje</translation>
-    </message>
-    <message>
-        <source>Show tabs at the top of the main window</source>
-        <translation>Pokazuj karty w górnej części okna głównego</translation>
-    </message>
-    <message>
-        <source>Allow only one instance</source>
-        <translation>Zezwalaj na tylko jedną instancję</translation>
-    </message>
-    <message>
-        <source>Always only display file names in playlist</source>
-        <translation>Zawsze wyświetlaj tylko nazwy plików w playliście</translation>
-    </message>
-    <message>
-        <source>Remember repeat mode</source>
-        <translation>Pamiętaj ustawienia powtarzania utworów</translation>
-    </message>
-    <message>
-        <source>Use proxy server</source>
-        <translation>Używaj serwera proxy</translation>
-    </message>
-    <message>
-        <source>Proxy server needs login</source>
-        <translation>Serwer proxy wymaga logowania</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation>Nazwa użytkownika</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Hasło</translation>
-    </message>
-    <message>
-        <source>Proxy server address</source>
-        <translation>Adres serwera proxy</translation>
-    </message>
-    <message>
-        <source>Proxy server port</source>
-        <translation>Port serwera proxy</translation>
-    </message>
-    <message>
-        <source>Clear covers cache</source>
-        <translation>Wyczyść pamięć podręczną okładek</translation>
-    </message>
-    <message>
-        <source>Reset settings</source>
-        <translation>Wyczyść ustawienia programu</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Język</translation>
-    </message>
-    <message>
-        <source>Style</source>
-        <translation>Styl</translation>
-    </message>
-    <message>
-        <source>Default audio language</source>
-        <translation>Domyślny język dla dźwięku</translation>
-    </message>
-    <message>
-        <source>Default subtitles language</source>
-        <translation>Domyślny język dla napisów</translation>
-    </message>
-    <message>
-        <source>Screenshots path</source>
-        <translation>Ścieżka do zrzutów ekranu</translation>
-    </message>
-    <message>
-        <source>Set key bindings</source>
-        <translation>Ustaw skróty klawiszowe</translation>
-    </message>
-    <message>
-        <source>Selected Profile</source>
-        <translation>Wybrany profil</translation>
-    </message>
-    <message>
-        <source>Read and display still images</source>
-        <translation>Wczytuj i wyświetlaj statyczne obrazy</translation>
-    </message>
-    <message>
-        <source>Use tray notifications as default</source>
-        <translation>Powiadomienia w tray&apos;u jako domyślne</translation>
-    </message>
-    <message>
-        <source>Remove youtube-dl</source>
-        <translation>Usuń youtube-dl</translation>
-    </message>
-    <message>
-        <source>Automatically delete ungrouped entries</source>
-        <translation>Automatycznie usuwaj niepogrupowane wpisy</translation>
-    </message>
-    <message>
-        <source>Hide artist metadata</source>
-        <translation>Ukryj metadane artysty</translation>
-    </message>
-    <message>
-        <source>Automatically restore main window when new video file is loaded</source>
-        <translation>Automatycznie przywróć główne okno po załadowaniu nowego pliku wideo</translation>
-    </message>
-    <message>
-        <source>Don&apos;t load playlist files within other files</source>
-        <translation>Pomijaj ładowanie plików playlist między innymi plikami</translation>
-    </message>
-    <message>
-        <source>Enlarge small covers</source>
-        <translation>Powiększaj małe okładki</translation>
-    </message>
-    <message>
-        <source>Subtitles and tags encoding</source>
-        <translation>Kodowanie napisów i tagów</translation>
-    </message>
-    <message>
-        <source>Output file path:</source>
-        <translation>Ścieżka pliku wyjściowego:</translation>
-    </message>
-    <message>
-        <source>youtube-dl settings</source>
-        <translation>Ustawienia youtube-dl</translation>
-    </message>
-    <message>
-        <source>Cookies from browser</source>
-        <translation>Ciasteczka z przeglądarki</translation>
-    </message>
-    <message>
-        <source>Custom path</source>
-        <translation>Ścieżka niestandardowa</translation>
-    </message>
-    <message>
-        <source>Don&apos;t auto-update</source>
-        <translation>Nie aktualizuj automatycznie</translation>
-    </message>
-    <message>
-        <source>Please refer to yt-dlp documentation</source>
-        <translation>Proszę zapoznać się z dokumentacją yt-dlp</translation>
-    </message>
-    <message>
-        <source>Default quality</source>
-        <translation>Domyślna jakość</translation>
-    </message>
-    <message>
-        <source>&quot;-f&quot; parameter, please refer to yt-dlp documentation</source>
-        <translation>parametr &quot;-f&quot;, proszę zapoznać się z dokumentacją yt-dlp</translation>
-    </message>
-    <message>
-        <source>Additional params</source>
-        <translation>Dodatkowe parametry</translation>
-    </message>
-    <message>
-        <source>Maintain panels size when resizing the main window (experimental)</source>
-        <translation>Zachowaj rozmiar paneli podczas zmiany rozmiaru okna głównego (eksperymentalne)</translation>
-    </message>
-</context>
-<context>
     <name>Help</name>
     <message>
         <source>&amp;Help</source>
@@ -1230,21 +1043,6 @@
     <message>
         <source>Lyrics not found</source>
         <translation>Nie znaleziono tekstu piosenki</translation>
-    </message>
-</context>
-<context>
-    <name>MPDemux</name>
-    <message>
-        <source>Samples</source>
-        <translation>Próbki</translation>
-    </message>
-    <message>
-        <source>Patterns</source>
-        <translation>Wzorce</translation>
-    </message>
-    <message>
-        <source>Channels</source>
-        <translation>Kanały</translation>
     </message>
 </context>
 <context>
@@ -1438,8 +1236,80 @@
         <translation>Wyjścia dla XVideo</translation>
     </message>
     <message>
+        <source>OpenMPT enabled</source>
+        <translation>OpenMPT włączony</translation>
+    </message>
+    <message>
+        <source>Only first</source>
+        <translation>Tylko pierwszy</translation>
+    </message>
+    <message>
+        <source>All sequentially</source>
+        <translation>Wszystkie kolejno</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupa</translation>
+    </message>
+    <message>
         <source>Default</source>
         <translation>Domyślne</translation>
+    </message>
+    <message>
+        <source>Nearest</source>
+        <translation>Najbliższy</translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation>Liniowy</translation>
+    </message>
+    <message>
+        <source>Cubic</source>
+        <translation>Sześcienny</translation>
+    </message>
+    <message>
+        <source>Windowed sinc (8 taps)</source>
+        <translation>Okienkowy sinc (8 próbek)</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Wyłączona</translation>
+    </message>
+    <message>
+        <source>Patterns</source>
+        <translation>Wzorce</translation>
+    </message>
+    <message>
+        <source>Samples</source>
+        <translation>Próbki</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wszystkie</translation>
+    </message>
+    <message>
+        <source>Channels:</source>
+        <translation>Kanały:</translation>
+    </message>
+    <message>
+        <source>Rows:</source>
+        <translation>Wiersze:</translation>
+    </message>
+    <message>
+        <source>Subsongs:</source>
+        <translation>Podutwory:</translation>
+    </message>
+    <message>
+        <source>Stereo separation:</source>
+        <translation>Separacja stereo:</translation>
+    </message>
+    <message>
+        <source>Interpolation filter:</source>
+        <translation>Filtr interpolacji:</translation>
+    </message>
+    <message>
+        <source>Visualization:</source>
+        <translation>Wizualizacja:</translation>
     </message>
     <message>
         <source>Automatic looking for multichannel device</source>
@@ -1448,10 +1318,6 @@
     <message>
         <source>Playback device</source>
         <translation>Urządzenia odtwarzające</translation>
-    </message>
-    <message>
-        <source>Resampling method</source>
-        <translation>Metoda resamplingu</translation>
     </message>
     <message>
         <source>Autodetect</source>
@@ -1524,10 +1390,6 @@
     <message>
         <source>Very high</source>
         <translation>Bardzo wysoka</translation>
-    </message>
-    <message>
-        <source>Rayman2 music (*.apm)</source>
-        <translation>Muzyka z gry Rayman2 (*.apm)</translation>
     </message>
     <message>
         <source>Uncompressed PCM sound</source>
@@ -1947,21 +1809,6 @@
     </message>
 </context>
 <context>
-    <name>ModulesList</name>
-    <message>
-        <source>Move up</source>
-        <translation>Przenieś wyżej</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Move down</source>
-        <translation>Przenieś niżej</translation>
-    </message>
-</context>
-<context>
     <name>NotifyService</name>
     <message>
         <source>Volume: %1%</source>
@@ -1985,14 +1832,42 @@
     </message>
 </context>
 <context>
-    <name>OSDSettings</name>
+    <name>OSDSettingsW</name>
+    <message>
+        <source>Background</source>
+        <translation>Tło</translation>
+    </message>
     <message>
         <source>Font</source>
         <translation>Czcionka</translation>
     </message>
     <message>
+        <source>Size: </source>
+        <translation>Rozmiar: </translation>
+    </message>
+    <message>
+        <source>Spacing: </source>
+        <translation>Odstępy: </translation>
+    </message>
+    <message>
+        <source>Bold</source>
+        <translation>Pogrubiona</translation>
+    </message>
+    <message>
         <source>Margins</source>
         <translation>Marginesy</translation>
+    </message>
+    <message>
+        <source>Left: </source>
+        <translation>Lewy: </translation>
+    </message>
+    <message>
+        <source>Right: </source>
+        <translation>Prawy: </translation>
+    </message>
+    <message>
+        <source>Vertical: </source>
+        <translation>Pionowy: </translation>
     </message>
     <message>
         <source>Subtitles alignment</source>
@@ -2003,48 +1878,24 @@
         <translation>Obramowanie</translation>
     </message>
     <message>
+        <source>Outline: </source>
+        <translation>Obwódka: </translation>
+    </message>
+    <message>
+        <source>Shadow: </source>
+        <translation>Cień: </translation>
+    </message>
+    <message>
         <source>Colors</source>
         <translation>Kolory</translation>
     </message>
     <message>
-        <source>Size</source>
-        <translation>Rozmiar</translation>
+        <source>Text: </source>
+        <translation>Tekst: </translation>
     </message>
     <message>
-        <source>Spacing</source>
-        <translation>Odstępy</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation>Lewy</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation>Prawy</translation>
-    </message>
-    <message>
-        <source>Vertical</source>
-        <translation>Pionowy</translation>
-    </message>
-    <message>
-        <source>Outline</source>
-        <translation>Obwódka</translation>
-    </message>
-    <message>
-        <source>Shadow</source>
-        <translation>Cień</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Tekst</translation>
-    </message>
-    <message>
-        <source>Bold</source>
-        <translation>Pogrubiona</translation>
-    </message>
-    <message>
-        <source>Background</source>
-        <translation>Tło</translation>
+        <source>Border: </source>
+        <translation>Obramowanie: </translation>
     </message>
 </context>
 <context>
@@ -2060,6 +1911,33 @@
     <message>
         <source>texture map error</source>
         <translation>błąd mapowania tekstury</translation>
+    </message>
+</context>
+<context>
+    <name>OpenMPDemux</name>
+    <message>
+        <source>Samples</source>
+        <translation>Próbki</translation>
+    </message>
+    <message>
+        <source>Patterns</source>
+        <translation>Wzorce</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Kanały</translation>
+    </message>
+    <message>
+        <source>Instruments</source>
+        <translation>Instrumenty</translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <translation>Ścieżka</translation>
+    </message>
+    <message>
+        <source>Track %1</source>
+        <translation>Ścieżka %1</translation>
     </message>
 </context>
 <context>
@@ -2399,201 +2277,6 @@
     <message>
         <source>&amp;Keep audio pitch</source>
         <translation>Z&amp;achowaj wysokość dźwięku</translation>
-    </message>
-</context>
-<context>
-    <name>PlaybackSettings</name>
-    <message>
-        <source>Maximum volume</source>
-        <translation>Maksymalna głośność</translation>
-    </message>
-    <message>
-        <source>Force samplerate</source>
-        <translation>Wymuś częstotliwość próbkowania</translation>
-    </message>
-    <message>
-        <source>Force channels conversion</source>
-        <translation>Wymuś konwersję kanałów</translation>
-    </message>
-    <message>
-        <source>Use available replay gain</source>
-        <translation>Użyj wyrównywania głośności, jeżeli dostępne</translation>
-    </message>
-    <message>
-        <source>Album mode for replay gain</source>
-        <translation>Tryb albumu dla wyrównywania głośności</translation>
-    </message>
-    <message>
-        <source>Prevent clipping</source>
-        <translation>Zapobiegaj przesterowaniu</translation>
-    </message>
-    <message>
-        <source>Mouse wheel action on video dock</source>
-        <translation>Akcja kółka myszki w oknie wideo</translation>
-    </message>
-    <message>
-        <source>Mouse wheel scrolls music/movie</source>
-        <translation>Kółko myszki przewija muzykę/film</translation>
-    </message>
-    <message>
-        <source>Mouse wheel changes the volume</source>
-        <translation>Kółko myszki zmienia głośność</translation>
-    </message>
-    <message>
-        <source>Keep zoom</source>
-        <translation>Pozostaw zoom między plikami wideo</translation>
-    </message>
-    <message>
-        <source>Show buffered data indicator on slider</source>
-        <translation>Pokazuj wskaźnik zbuforowanych danych na pasku przewijania</translation>
-    </message>
-    <message>
-        <source>Keep aspect ratio</source>
-        <translation>Pozostaw współczynnik proporcji między plikami wideo</translation>
-    </message>
-    <message>
-        <source>Keep subtitles delay</source>
-        <translation>Pozostaw opóźnienie napisów między plikami wideo</translation>
-    </message>
-    <message>
-        <source>Keep subtitles scale</source>
-        <translation>Pozostaw powiększenie napisów między plikami wideo</translation>
-    </message>
-    <message>
-        <source>Keep speed</source>
-        <translation>Pozostaw szybkość odtwarzania między plikami</translation>
-    </message>
-    <message>
-        <source>Keep video delay</source>
-        <translation>Pozostaw opóźnienie obrazu względem dźwięku między plikami wideo</translation>
-    </message>
-    <message>
-        <source>Video to audio sync (frame skipping)</source>
-        <translation>Synchronizuj obraz do dźwięku (pomijanie klatek)</translation>
-    </message>
-    <message>
-        <source>Fade sound</source>
-        <translation>Wyciszaj podczas zatrzymywania odtwarzania</translation>
-    </message>
-    <message>
-        <source>Remember video equalizer settings</source>
-        <translation>Pamiętaj ustawienia korektora wideo</translation>
-    </message>
-    <message>
-        <source>Play next entry after playback error</source>
-        <translation>Odtwarzaj następny utwór, jeżeli wystąpił błąd odtwarzania</translation>
-    </message>
-    <message>
-        <source>Short seeking (left and right arrows)</source>
-        <translation>Krótkie przewijanie (strzałki: w lewo i w prawo)</translation>
-    </message>
-    <message>
-        <source>Long seeking (up and down arrows)</source>
-        <translation>Długie przewijanie (strzałki: w górę i w dół)</translation>
-    </message>
-    <message>
-        <source>Local buffer size (A/V packages count)</source>
-        <translation>Rozmiar bufora dla lokalnych strumieni (ilość paczek A/V)</translation>
-    </message>
-    <message>
-        <source>Percent of packages for backwards rewinding</source>
-        <translation>Ilość procent przeznaczonych paczek A/V dla przewijania w tył</translation>
-    </message>
-    <message>
-        <source>Start playback internet stream if it is buffered</source>
-        <translation>Rozpocznij odtwarzanie strumienia internetowego jeżeli zostanie zbuforowane</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation>sek</translation>
-    </message>
-    <message>
-        <source>Amplify</source>
-        <translation>Wzmocnienie</translation>
-    </message>
-    <message>
-        <source>Primary mouse button on video dock toggles playback</source>
-        <translation>Lewy przycisk myszy w oknie wideo przełącza odtwarzanie</translation>
-    </message>
-    <message>
-        <source>Accurate seeking</source>
-        <translation>Dokładne przewijanie</translation>
-    </message>
-    <message>
-        <source>Store aspect ratio and zoom in config file</source>
-        <translation>Zapisz współczynnik proporcji i zoom w pliku konfiguracyjnym</translation>
-    </message>
-    <message>
-        <source>Unpause when seeking</source>
-        <translation>Wznów odtwarzanie podczas przewijania</translation>
-    </message>
-    <message>
-        <source>Use audio resampler and channel conversion before filters and visualizations</source>
-        <translation>Użyj resamplera audio i konwersji kanałów przed filtrami i wizualizacjmi</translation>
-    </message>
-    <message>
-        <source>Middle mouse button on video dock toggles fullscreen</source>
-        <translation>Środkowy przycisk myszy w oknie wideo przełącza pełny ekran</translation>
-    </message>
-    <message>
-        <source>Disable subtitles at program startup</source>
-        <translation>Wyłącz napisy podczas uruchamiania programu</translation>
-    </message>
-    <message>
-        <source>Remember audio/video/subtitles enabled state</source>
-        <translation>Zapamiętaj, czy audio/wideo/napisy są włączone</translation>
-    </message>
-    <message>
-        <source>Partially checked means that there is a delay between click and pausing</source>
-        <translation>Częściowo zaznaczone oznacza, że występuje przerwa między kliknięciem a pauzą</translation>
-    </message>
-    <message>
-        <source>Amplify (no metadata)</source>
-        <translation>Wzmocnienie (brak metadanych)</translation>
-    </message>
-    <message>
-        <source>Network buffer length</source>
-        <translation>Długość bufora sieciowego</translation>
-    </message>
-    <message>
-        <source>Live stream buffer length</source>
-        <translation>Długość bufora dla transmisji na żywo</translation>
-    </message>
-    <message>
-        <source>Remember playback position for each playlist entry</source>
-        <translation>Zapamiętaj pozycję odtwarzania dla każdego wpisu listy odtwarzania</translation>
-    </message>
-    <message>
-        <source>Desired video stream quality:</source>
-        <translation>Żądana jakość strumienia wideo:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Domyślna</translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Full HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>4K</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Continue last playback when program starts</source>
-        <translation>Kontynuuj ostatnie odtwarzanie po uruchomieniu programu</translation>
-    </message>
-    <message>
-        <source>The length must be at least 8 minutes. Your playback position must be in [1% - 99%] of the playback range. You can continue playback by pressing the icon next to the full screen button.</source>
-        <translation>Długość musi wynosić co najmniej 8 minut. Pozycja odtwarzania musi znajdować się w zakresie odtwarzania od 1% do 99%. Możesz kontynuować odtwarzanie, naciskając ikonę obok przycisku pełnego ekranu.</translation>
     </message>
 </context>
 <context>
@@ -3321,6 +3004,394 @@ Częściowo zaznaczone nie wpływa na przeijanie na suwaku.</translation>
         <translation>Priorytety wyjść obrazu starszego typu</translation>
     </message>
     <message>
+        <source>Show covers</source>
+        <translation>Wyświetlaj okładki</translation>
+    </message>
+    <message>
+        <source>Show covers from directory if they aren&apos;t in the music file</source>
+        <translation>Wyświetlaj okładki z katalogu jeżeli nie ma ich w pliku muzycznym</translation>
+    </message>
+    <message>
+        <source>Enlarge small covers</source>
+        <translation>Powiększaj małe okładki</translation>
+    </message>
+    <message>
+        <source>Blurred covers as background</source>
+        <translation>Rozmyte okładki jako tło</translation>
+    </message>
+    <message>
+        <source>Clear covers cache</source>
+        <translation>Wyczyść pamięć podręczną okładek</translation>
+    </message>
+    <message>
+        <source>Set key bindings</source>
+        <translation>Ustaw skróty klawiszowe</translation>
+    </message>
+    <message>
+        <source>Reset settings</source>
+        <translation>Wyczyść ustawienia programu</translation>
+    </message>
+    <message>
+        <source>Language: </source>
+        <translation>Język: </translation>
+    </message>
+    <message>
+        <source>Style: </source>
+        <translation>Styl: </translation>
+    </message>
+    <message>
+        <source>Subtitles and tags encoding: </source>
+        <translation>Kodowanie napisów i tagów: </translation>
+    </message>
+    <message>
+        <source>Default audio language: </source>
+        <translation>Domyślny język dla dźwięku: </translation>
+    </message>
+    <message>
+        <source>Default subtitles language: </source>
+        <translation>Domyślny język dla napisów: </translation>
+    </message>
+    <message>
+        <source>Screenshots path: </source>
+        <translation>Ścieżka do zrzutów ekranu: </translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Przeglądaj</translation>
+    </message>
+    <message>
+        <source>Output file path: </source>
+        <translation>Ścieżka pliku wyjściowego: </translation>
+    </message>
+    <message>
+        <source>Use system icon set</source>
+        <translation>Użyj systemowego zestawu ikon</translation>
+    </message>
+    <message>
+        <source>Set appearance</source>
+        <translation>Ustaw wygląd</translation>
+    </message>
+    <message>
+        <source>Selected Profile: </source>
+        <translation>Wybrany profil: </translation>
+    </message>
+    <message>
+        <source>Automatically check and download updates</source>
+        <translation>Automatycznie sprawdzaj i pobieraj aktualizacje</translation>
+    </message>
+    <message>
+        <source>Automatically open video window</source>
+        <translation>Automatyczne otwieranie okienka z filmem</translation>
+    </message>
+    <message>
+        <source>Show tabs at the top of the main window</source>
+        <translation>Pokazuj karty w górnej części okna głównego</translation>
+    </message>
+    <message>
+        <source>Allow only one instance</source>
+        <translation>Zezwalaj na tylko jedną instancję</translation>
+    </message>
+    <message>
+        <source>Always only display file names in playlist</source>
+        <translation>Zawsze wyświetlaj tylko nazwy plików w playliście</translation>
+    </message>
+    <message>
+        <source>Remember repeat mode</source>
+        <translation>Pamiętaj ustawienia powtarzania utworów</translation>
+    </message>
+    <message>
+        <source>Use proxy server</source>
+        <translation>Używaj serwera proxy</translation>
+    </message>
+    <message>
+        <source>Proxy server needs login</source>
+        <translation>Serwer proxy wymaga logowania</translation>
+    </message>
+    <message>
+        <source>User name</source>
+        <translation>Nazwa użytkownika</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
+        <source>Proxy server address</source>
+        <translation>Adres serwera proxy</translation>
+    </message>
+    <message>
+        <source>Proxy server port</source>
+        <translation>Port serwera proxy</translation>
+    </message>
+    <message>
+        <source>Read and display still images</source>
+        <translation>Wczytuj i wyświetlaj statyczne obrazy</translation>
+    </message>
+    <message>
+        <source>Use tray notifications as default</source>
+        <translation>Powiadomienia w tray&apos;u jako domyślne</translation>
+    </message>
+    <message>
+        <source>Automatically delete ungrouped entries</source>
+        <translation>Automatycznie usuwaj niepogrupowane wpisy</translation>
+    </message>
+    <message>
+        <source>Hide artist metadata</source>
+        <translation>Ukryj metadane artysty</translation>
+    </message>
+    <message>
+        <source>Automatically restore main window when new video file is loaded</source>
+        <translation>Automatycznie przywróć główne okno po załadowaniu nowego pliku wideo</translation>
+    </message>
+    <message>
+        <source>Don&apos;t load playlist files within other files</source>
+        <translation>Pomijaj ładowanie plików playlist między innymi plikami</translation>
+    </message>
+    <message>
+        <source>youtube-dl settings</source>
+        <translation>Ustawienia youtube-dl</translation>
+    </message>
+    <message>
+        <source>Cookies from browser</source>
+        <translation>Ciasteczka z przeglądarki</translation>
+    </message>
+    <message>
+        <source>Custom path</source>
+        <translation>Ścieżka niestandardowa</translation>
+    </message>
+    <message>
+        <source>Don&apos;t auto-update</source>
+        <translation>Nie aktualizuj automatycznie</translation>
+    </message>
+    <message>
+        <source>Remove youtube-dl</source>
+        <translation>Usuń youtube-dl</translation>
+    </message>
+    <message>
+        <source>Please refer to yt-dlp documentation</source>
+        <translation>Proszę zapoznać się z dokumentacją yt-dlp</translation>
+    </message>
+    <message>
+        <source>Default quality</source>
+        <translation>Domyślna jakość</translation>
+    </message>
+    <message>
+        <source>&quot;-f&quot; parameter, please refer to yt-dlp documentation</source>
+        <translation>parametr &quot;-f&quot;, proszę zapoznać się z dokumentacją yt-dlp</translation>
+    </message>
+    <message>
+        <source>Additional params</source>
+        <translation>Dodatkowe parametry</translation>
+    </message>
+    <message>
+        <source>Maintain panels size when resizing the main window (experimental)</source>
+        <translation>Zachowaj rozmiar paneli podczas zmiany rozmiaru okna głównego (eksperymentalne)</translation>
+    </message>
+    <message>
+        <source>Fullscreen panels on the right side</source>
+        <translation>Panel pełnoekranowy po prawej stronie</translation>
+    </message>
+    <message>
+        <source>Hide QMPlay2 logo</source>
+        <translation>Ukryj logo QMPlay2</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Przenieś wyżej</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Przenieś niżej</translation>
+    </message>
+    <message>
+        <source>Use available replay gain</source>
+        <translation>Użyj wyrównywania głośności, jeżeli dostępne</translation>
+    </message>
+    <message>
+        <source>Album mode for replay gain</source>
+        <translation>Tryb albumu dla wyrównywania głośności</translation>
+    </message>
+    <message>
+        <source>Prevent clipping</source>
+        <translation>Zapobiegaj przesterowaniu</translation>
+    </message>
+    <message>
+        <source>Amplify</source>
+        <translation>Wzmocnienie</translation>
+    </message>
+    <message>
+        <source>Amplify (no metadata)</source>
+        <translation>Wzmocnienie (brak metadanych)</translation>
+    </message>
+    <message>
+        <source>Partially checked means that there is a delay between click and pausing</source>
+        <translation>Częściowo zaznaczone oznacza, że występuje przerwa między kliknięciem a pauzą</translation>
+    </message>
+    <message>
+        <source>Primary mouse button on video dock toggles playback</source>
+        <translation>Lewy przycisk myszy w oknie wideo przełącza odtwarzanie</translation>
+    </message>
+    <message>
+        <source>Middle mouse button on video dock toggles fullscreen</source>
+        <translation>Środkowy przycisk myszy w oknie wideo przełącza pełny ekran</translation>
+    </message>
+    <message>
+        <source>Keep video delay</source>
+        <translation>Pozostaw opóźnienie obrazu względem dźwięku między plikami wideo</translation>
+    </message>
+    <message>
+        <source>Fade sound</source>
+        <translation>Wyciszaj podczas zatrzymywania odtwarzania</translation>
+    </message>
+    <message>
+        <source>Keep speed</source>
+        <translation>Pozostaw szybkość odtwarzania między plikami</translation>
+    </message>
+    <message>
+        <source>Keep zoom</source>
+        <translation>Pozostaw zoom między plikami wideo</translation>
+    </message>
+    <message>
+        <source>Keep subtitles scale</source>
+        <translation>Pozostaw powiększenie napisów między plikami wideo</translation>
+    </message>
+    <message>
+        <source>Keep subtitles delay</source>
+        <translation>Pozostaw opóźnienie napisów między plikami wideo</translation>
+    </message>
+    <message>
+        <source>Video to audio sync (frame skipping)</source>
+        <translation>Synchronizuj obraz do dźwięku (pomijanie klatek)</translation>
+    </message>
+    <message>
+        <source>Short seeking (left and right arrows): </source>
+        <translation>Krótkie przewijanie (strzałki: w lewo i w prawo): </translation>
+    </message>
+    <message>
+        <source>sec</source>
+        <translation>sek</translation>
+    </message>
+    <message>
+        <source>Long seeking (up and down arrows): </source>
+        <translation>Długie przewijanie (strzałki: w górę i w dół): </translation>
+    </message>
+    <message>
+        <source>Local buffer size (A/V packages count): </source>
+        <translation>Rozmiar bufora dla lokalnych strumieni (ilość paczek A/V): </translation>
+    </message>
+    <message>
+        <source>Network buffer length: </source>
+        <translation>Długość bufora sieciowego: </translation>
+    </message>
+    <message>
+        <source>Percent of packages for backwards rewinding: </source>
+        <translation>Ilość procent przeznaczonych paczek A/V dla przewijania w tył: </translation>
+    </message>
+    <message>
+        <source>Live stream buffer length: </source>
+        <translation>Długość bufora dla transmisji na żywo: </translation>
+    </message>
+    <message>
+        <source>Start playback internet stream if it is buffered: </source>
+        <translation>Rozpocznij odtwarzanie strumienia internetowego jeżeli zostanie zbuforowane: </translation>
+    </message>
+    <message>
+        <source>Desired video stream quality: </source>
+        <translation>Żądana jakość strumienia wideo: </translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Full HD</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>4K</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Maximum volume: </source>
+        <translation>Maksymalna głośność: </translation>
+    </message>
+    <message>
+        <source>Force samplerate: </source>
+        <translation>Wymuś częstotliwość próbkowania: </translation>
+    </message>
+    <message>
+        <source>Force channels conversion: </source>
+        <translation>Wymuś konwersję kanałów: </translation>
+    </message>
+    <message>
+        <source>Use audio resampler and channel conversion before filters and visualizations</source>
+        <translation>Użyj resamplera audio i konwersji kanałów przed filtrami i wizualizacjmi</translation>
+    </message>
+    <message>
+        <source>Keep aspect ratio</source>
+        <translation>Pozostaw współczynnik proporcji między plikami wideo</translation>
+    </message>
+    <message>
+        <source>Accurate seeking</source>
+        <translation>Dokładne przewijanie</translation>
+    </message>
+    <message>
+        <source>Play next entry after playback error</source>
+        <translation>Odtwarzaj następny utwór, jeżeli wystąpił błąd odtwarzania</translation>
+    </message>
+    <message>
+        <source>Continue last playback when program starts</source>
+        <translation>Kontynuuj ostatnie odtwarzanie po uruchomieniu programu</translation>
+    </message>
+    <message>
+        <source>Mouse wheel action on video dock</source>
+        <translation>Akcja kółka myszki w oknie wideo</translation>
+    </message>
+    <message>
+        <source>Mouse wheel scrolls music/movie</source>
+        <translation>Kółko myszki przewija muzykę/film</translation>
+    </message>
+    <message>
+        <source>Mouse wheel changes the volume</source>
+        <translation>Kółko myszki zmienia głośność</translation>
+    </message>
+    <message>
+        <source>Remember video equalizer settings</source>
+        <translation>Pamiętaj ustawienia korektora wideo</translation>
+    </message>
+    <message>
+        <source>Show buffered data indicator on slider</source>
+        <translation>Pokazuj wskaźnik zbuforowanych danych na pasku przewijania</translation>
+    </message>
+    <message>
+        <source>Store aspect ratio and zoom in config file</source>
+        <translation>Zapisz współczynnik proporcji i zoom w pliku konfiguracyjnym</translation>
+    </message>
+    <message>
+        <source>Unpause when seeking</source>
+        <translation>Wznów odtwarzanie podczas przewijania</translation>
+    </message>
+    <message>
+        <source>Disable subtitles at program startup</source>
+        <translation>Wyłącz napisy podczas uruchamiania programu</translation>
+    </message>
+    <message>
+        <source>Remember audio/video/subtitles enabled state</source>
+        <translation>Zapamiętaj, czy audio/wideo/napisy są włączone</translation>
+    </message>
+    <message>
+        <source>Remember playback position for each playlist entry</source>
+        <translation>Zapamiętaj pozycję odtwarzania dla każdego wpisu listy odtwarzania</translation>
+    </message>
+    <message>
+        <source>The length must be at least 8 minutes. Your playback position must be in [1% - 99%] of the playback range. You can continue playback by pressing the icon next to the full screen button.</source>
+        <translation>Długość musi wynosić co najmniej 8 minut. Pozycja odtwarzania musi znajdować się w zakresie odtwarzania od 1% do 99%. Możesz kontynuować odtwarzanie, naciskając ikonę obok przycisku pełnego ekranu.</translation>
+    </message>
+    <message>
         <source>Legacy</source>
         <translation>Starszego typu</translation>
     </message>
@@ -3395,6 +3466,10 @@ Częściowo zaznaczone nie wpływa na przeijanie na suwaku.</translation>
     <message>
         <source>High quality image scaling up</source>
         <translation>Wysoka jakość skalowania obrazu w górę</translation>
+    </message>
+    <message>
+        <source>Try to display BT.2020 videos in BT.2020 color space (experimental)</source>
+        <translation>Spróbuj wyświetlić filmy BT.2020 w przestrzeni kolorów BT.2020 (eksperymentalne)</translation>
     </message>
     <message>
         <source>First available device</source>
@@ -3731,6 +3806,10 @@ Częściowo zaznaczone nie spowoduje zmniejszenia liczby kanałów
         <translation>Kontrast</translation>
     </message>
     <message>
+        <source>Gamma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Saturation</source>
         <translation>Nasycenie</translation>
     </message>
@@ -3741,6 +3820,10 @@ Częściowo zaznaczone nie spowoduje zmniejszenia liczby kanałów
     <message>
         <source>Sharpness</source>
         <translation>Ostrość</translation>
+    </message>
+    <message>
+        <source>Gamma correction: </source>
+        <translation>Korekcja gamma: </translation>
     </message>
     <message>
         <source>Reset video adjustments</source>
@@ -3789,6 +3872,14 @@ Częściowo zaznaczone nie spowoduje zmniejszenia liczby kanałów
     <message>
         <source>Negative</source>
         <translation>Negatyw</translation>
+    </message>
+    <message>
+        <source>Gamma down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gamma up</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable negative</source>

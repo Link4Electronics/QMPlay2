@@ -20,6 +20,8 @@
 #include "VulkanWindow.hpp"
 #include "VulkanHWInterop.hpp"
 
+#include <Functions.hpp>
+
 #include <QDebug>
 
 namespace QmVk {
@@ -40,6 +42,7 @@ Writer::Writer()
     addParam("Hue");
     addParam("Saturation");
     addParam("Sharpness");
+    addParam("Gamma");
     addParam("ColorPrimaries");
     addParam("ColorTrc");
     addParam("Negative");
@@ -78,7 +81,8 @@ bool Writer::set()
         sets.getBool("Vulkan/HQScaleDown"),
         sets.getBool("Vulkan/HQScaleUp"),
         sets.getBool("Vulkan/BypassCompositor"),
-        sets.getBool("Vulkan/HDR")
+        sets.getBool("Vulkan/HDR"),
+        sets.getBool("Vulkan/BT2020")
     );
 
     return !mustRestart;
@@ -109,6 +113,8 @@ bool Writer::processParams(bool *paramsCorrected)
     else if (sharpness > 0.0f)
         sharpness /= 40.0f;
 
+    const float gamma = Functions::sliderValueToGamma(getParam("Gamma").toInt());
+
     m_window->setParams(
         QSize(getParam("W").toInt(), getParam("H").toInt()),
         getParam("AspectRatio").toDouble(),
@@ -118,6 +124,7 @@ bool Writer::processParams(bool *paramsCorrected)
         getParam("Rotate90").toBool(),
         getParam("Brightness").toInt() / 100.0f,
         (getParam("Contrast").toInt() + 100.0f) / 100.0f,
+        gamma,
         getParam("Hue").toInt() / 200.0f,
         (getParam("Saturation").toInt() + 100.0f) / 100.0f,
         sharpness,
@@ -136,7 +143,7 @@ AVPixelFormats Writer::supportedPixelFormats() const
 
 void Writer::writeVideo(const Frame &videoFrame, QMPlay2OSDList &&osdList)
 {
-    m_window->setFrame(videoFrame, move(osdList));
+    m_window->setFrame(videoFrame, std::move(osdList));
 }
 
 void Writer::pause()
@@ -151,6 +158,9 @@ QString Writer::name() const
 
     if (m_window->isHdr10St2084())
         additionalText += "HDR";
+
+    if (m_window->isBt2020Linear())
+        additionalText += QStringLiteral("BT.2020");
 
     if (m_vkHwInterop)
         additionalText += m_vkHwInterop->name();

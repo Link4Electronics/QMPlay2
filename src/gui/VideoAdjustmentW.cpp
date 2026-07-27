@@ -23,6 +23,7 @@
 #include <Settings.hpp>
 #include <Slider.hpp>
 #include <Main.hpp>
+#include <Functions.hpp>
 
 #include <QGridLayout>
 #include <QPushButton>
@@ -33,6 +34,7 @@ enum CONTROLS
 {
     BRIGHTNESS,
     CONTRAST,
+    GAMMA,
     SATURATION,
     HUE,
     SHARPNESS,
@@ -43,6 +45,7 @@ enum CONTROLS
 constexpr const char *g_controlsNames[CONTROLS_COUNT] = {
     QT_TRANSLATE_NOOP("VideoAdjustmentW", "Brightness"),
     QT_TRANSLATE_NOOP("VideoAdjustmentW", "Contrast"),
+    QT_TRANSLATE_NOOP("VideoAdjustmentW", "Gamma"),
     QT_TRANSLATE_NOOP("VideoAdjustmentW", "Saturation"),
     QT_TRANSLATE_NOOP("VideoAdjustmentW", "Hue"),
     QT_TRANSLATE_NOOP("VideoAdjustmentW", "Sharpness"),
@@ -78,11 +81,15 @@ VideoAdjustmentW::VideoAdjustmentW()
             slider->setRange(-100, 100);
         }
         slider->setWheelStep(1);
-        slider->setValue(0);
         connect(slider, &Slider::valueChanged, this, [=](int v) {
-            valueL->setText(QString::number(v));
-            emit videoAdjustmentChanged(titleL->text() + QString::number(v));
+            const bool isGammaControl = (i == GAMMA);
+            const QString displayVal = isGammaControl
+                ? QString::number(Functions::sliderValueToGamma(v), 'f', 2)
+                : QString::number(v);
+            valueL->setText(displayVal);
+            emit videoAdjustmentChanged((isGammaControl ? tr("Gamma correction: ") : titleL->text()) + displayVal);
         });
+        slider->setValue(0);
         m_sliders.push_back(slider);
 
         QAction *actionDown = new QAction(this);
@@ -169,6 +176,9 @@ void VideoAdjustmentW::setKeyShortcuts()
 
     appendAction(m_actions[SHARPNESS][0], tr("Sharpness down"), "sharpnessDown", "7");
     appendAction(m_actions[SHARPNESS][1], tr("Sharpness up"), "sharpnessUp", "9");
+
+    appendAction(m_actions[GAMMA][0], tr("Gamma down"), "gammaDown", "G");
+    appendAction(m_actions[GAMMA][1], tr("Gamma up"), "gammaUp", "H");
 
     appendAction(m_actions[NEGATIVE][0], tr("Disable negative"), "negativeDisable", QString());
     appendAction(m_actions[NEGATIVE][1], tr("Enable negative"), "negativeEnable", QString());

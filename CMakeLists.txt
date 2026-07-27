@@ -38,10 +38,7 @@ else()
     find_package(DummyPkgConfig REQUIRED)
 endif()
 
-if((NOT DEFINED BUILD_WITH_QT6 OR BUILD_WITH_QT6) AND NOT DEFINED Qt6_FOUND AND (NOT DEFINED QT_QMAKE_EXECUTABLE OR QT_QMAKE_EXECUTABLE MATCHES "qmake6"))
-    find_package(Qt6 6.1)
-endif()
-option(BUILD_WITH_QT6 "Build with Qt6" ${Qt6_FOUND})
+option(BUILD_WITH_QT6 "Build with Qt6" ON)
 add_feature_info(Qt6 BUILD_WITH_QT6 "Build with Qt6")
 
 if(BUILD_WITH_QT6)
@@ -136,9 +133,6 @@ add_feature_info(Vulkan USE_VULKAN "Build with Vulkan support")
 if(USE_VULKAN)
     add_definitions(-DUSE_VULKAN)
 endif()
-
-option(USE_GLSLC "Compile Vulkan shaders" OFF)
-add_feature_info(GLSLC USE_GLSLC "Compile Vulkan shaders")
 
 if(NOT WIN32 AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
     option(USE_FREEDESKTOP_NOTIFICATIONS "Use Freedesktop notifications" ON)
@@ -284,7 +278,7 @@ option(USE_CHIPTUNE_GME "Build Chiptune with GME support" ${LIBGME_FOUND})
 add_feature_info("Chiptune GME" USE_CHIPTUNE_GME "Build Chiptune with GME support")
 
 if(NOT DEFINED USE_CHIPTUNE_SID)
-    pkg_check_modules(LIBSIDPLAYFP libsidplayfp)
+    pkg_check_modules(LIBSIDPLAYFP libsidplayfp>=2.16)
 endif()
 option(USE_CHIPTUNE_SID "Build Chiptune with SIDPLAY support" ${LIBSIDPLAYFP_FOUND})
 add_feature_info("Chiptune SIDPLAY" USE_CHIPTUNE_SID "Build Chiptune with SIDPLAY support")
@@ -374,10 +368,6 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang"
     # enable warnings
     set(CMAKE_CXX_FLAGS "-Wall ${CMAKE_CXX_FLAGS}")
 
-    if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "15.0.0")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unqualified-std-cast-call")
-    endif()
-
     if(CMAKE_MODULE_LINKER_FLAGS)
         # allow undefined references for modules
         string(REPLACE "-Wl,--no-undefined," "-Wl," CMAKE_MODULE_LINKER_FLAGS ${CMAKE_MODULE_LINKER_FLAGS})
@@ -443,7 +433,6 @@ find_package(${QT_PREFIX}Svg REQUIRED)
 
 if(USE_VULKAN)
     set(Vulkan_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/qmplay2/vulkan/headers/include")
-    set(QMVK_USE_PCH ${USE_PCH})
     set(QMVK_WAIT_TIMEOUT_MS 2500)
     add_subdirectory(src/qmvk)
 endif()
